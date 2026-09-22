@@ -4,7 +4,7 @@ export type TrainingExcerpt = {
 };
 
 export type TrainingModule = {
-  id: "power" | "purpose" | "people";
+  id: "people" | "power" | "purpose";
   title: string;
   leaveWith: string;
   source: string;
@@ -12,99 +12,101 @@ export type TrainingModule = {
   prompts: string[];
 };
 
-/** Day 1 notebook copy. Excerpts only — not the full packets. */
+/** Day 1 notebook copy. Excerpts only — not the full intensive deck. */
+export const DAY1_PLAYBOOK =
+  "People, Power, Purpose: Your Playbook for a Brighter Charlotte";
+
+export const DAY1_INTENSIVE = "Volunteer Organizing Intensive";
+
 export const DAY1_SOURCE_NOTE =
-  "Organize NC Fellowship Training Intensive, People, Power, Purpose participant resource packets (Franklinton Center at Bricks, August 2023). Short excerpts for new-volunteer Day 1; not the full packets.";
+  "Day 1 follows the Dimple Ajmera for Mayor Volunteer Organizing Intensive — Field Guide & Strategy Blueprint, Vol. 1. Short excerpts for new volunteers; not the full deck. Later days are not in Hub yet.";
 
 export const DAY1_MODULES: TrainingModule[] = [
+  {
+    id: "people",
+    title: "People",
+    leaveWith:
+      "People is who we are fighting for, and how we talk with them. Day 1 starts with Dimple’s path, the four-pillar mandate, and an empathy loop you can use at the door without blame or criticism.",
+    source: "Volunteer Organizing Intensive, Ajmera Campaign Blueprint.",
+    excerpts: [
+      {
+        quote:
+          "Age 16: Immigrated to the US; overcame language barriers at Southern High School in Durham. The Hustle: Cleaned hotel rooms to pay for college at USC. The Professional: Became a CPA; managed multi-million dollar budgets working with TIAA. The Pivot: Re-evaluated her path after her father's sudden passing at 55; committed to public service. The Leader: Four-term Charlotte City Councilwoman At Large; 2018 Global Service Award winner. Working Mother. Accountant. Fighter.",
+        location: "The North Star: Who We Are Fighting For",
+      },
+      {
+        quote:
+          "It's not what we say, but it's really what we do that matters. Safe Charlotte: Safety regardless of your zip code. Sustainable Infrastructure: Building a resilient future and environmental protection. Affordable Housing: Expanding access for all residents. Economic Opportunities: Creating growth in all parts of our city.",
+        location: "The Platform: Our Mandate for Charlotte",
+      },
+      {
+        quote:
+          "Having authentic conversations at the door. Expressing (without blame): Observations — “When I see/hear…” Feelings — “I feel…” (joyous, concerned, hopeful). Needs — “…because I value…” (community, safety, integrity). Requests — “Would you be willing to support Dimple?” Receiving (without criticism): hearing, empathizing, identifying needs, accepting requests or feedback gracefully.",
+        location: "Voter Connection: The Empathy Loop",
+      },
+    ],
+    prompts: [
+      "What part of Dimple’s path would you actually say at a door this week?",
+      "Which of the four pillars is the one you can speak from without notes?",
+      "Can you run the empathy loop — observe, feel, name a need, then ask — without blame?",
+    ],
+  },
   {
     id: "power",
     title: "Power",
     leaveWith:
-      "Power is the ability to mobilize resources to meet needs — to achieve a purpose. Day 1 asks you to notice power-over, power-under, and power-with, and to see that campaigns also fight over what even gets on the table.",
-    source:
-      "Week 2 packet — Power (15–18 Aug 2023), Organize NC Fellowship Training Intensive.",
+      "Power on this campaign is three jobs at once: win the seat, build volunteer leadership, and change what Charlotte treats as common sense. A shift is never only doors — it is how we grow all three dimensions.",
+    source: "Volunteer Organizing Intensive, Ajmera Campaign Blueprint.",
     excerpts: [
       {
         quote:
-          "At its core, power means the ability to mobilize resources to attend to needs. Or as Martin Luther King put it, “power is the ability to achieve purpose.”",
-        location: "Dominant and Liberatory Power",
+          "1st Dimension (External): Power to Win Demands. Organizing people and resources for direct political action. Goal: Win the Mayoral Seat.",
+        location: "The 3 Dimensions of Campaign Power",
       },
       {
         quote:
-          "Dominant power produces negative patterns of domination (power-over) and victimhood (power-under). Liberatory power operates through power-within and power-with.",
-        location: "Dominant and Liberatory Power",
+          "2nd Dimension (Internal): Power to Drive the Agenda. Building movement infrastructure and volunteer leadership. Goal: Build our grassroots capacity.",
+        location: "The 3 Dimensions of Campaign Power",
       },
       {
         quote:
-          "The first dimension of power is the one most clearly displayed in moments of explicit conflict… We build power on this dimension by organizing and mobilizing people to exert pressure on targets and win demands. The second dimension of power is about the ability to shape the political agenda, to define what is and what is not up for debate.",
-        location: "3 Dimensions of Power",
+          "3rd Dimension (Narrative): Power to Shape Common Sense. Making meaning on the terrain of ideology. Goal: Change what Charlotte believes is politically possible.",
+        location: "The 3 Dimensions of Campaign Power",
       },
     ],
     prompts: [
-      "What have been my experiences with power?",
-      "How can I stand more fully in my power — and help others stand in theirs?",
-      "What power do our people have, what power do we oppose, and what power will we need to build?",
+      "Which dimension of power is the shift you are taking this week actually building?",
+      "What would “drive the agenda” look like among volunteers this month — not just turnout math?",
+      "What does Charlotte currently treat as common sense that this campaign is trying to move?",
     ],
   },
   {
     id: "purpose",
     title: "Purpose",
     leaveWith:
-      "Purpose is the why — individual and shared. A campaign plan names a goal, reads the current ground, then chooses strategy and tactics. Cutting a large problem into a winnable issue is how volunteers spend time on something that can actually move.",
-    source:
-      "Week 3 packet — Purpose (22–25 Aug 2023), Organize NC Fellowship Training Intensive.",
+      "Purpose is the architecture: where we are going, how we cut a winnable issue, and which work is a big rock. Goal, analysis, strategy, then tactics — tactics without that stack is noise. Direct voter contact and leadership come before inbox sand.",
+    source: "Volunteer Organizing Intensive, Ajmera Campaign Blueprint.",
     excerpts: [
       {
         quote:
-          "Broadly, we can define purpose as an intention or aim that motivates us to take action. Our purpose is our “why” or our North Star—what causes us to get out of bed in the morning, to keep going when the going gets tough, and to reorient ourselves when we get off track.",
-        location: "Purpose",
+          "Goal: Where do we want to go? (Defining external, internal, and narrative objectives). Analysis: Where are we right now? (Evaluating resources, opposition, and support). Strategy: What approach gets us there? (Identifying targets and our rationale for success). Tactics: How will we carry it out? (The specific actions on the ground).",
+        location: "Campaign Architecture: The 4-Part Strategy",
       },
       {
         quote:
-          "A plan is a sequence of actions that we carry out in order to achieve an intended purpose. Consciously or unconsciously, our plans are often composed of: Goal — where do we want to go? Analysis — where are we at right now? Strategy — what overall approach will best get us from here to there? Tactics — how will we carry it out?",
-        location: "Purpose",
+          "Breaking big-picture problems into manageable, winnable parts. Is it winnable with a clear timeframe? Does it have a clear decision-maker (target)? Does it result in a real improvement to people's lives? Does it unite/strengthen our supporters? Does it align with Dimple's 4-pillar platform? Takeaway: High-scoring issues isolate opponents, persuade the middle, and develop volunteer leadership.",
+        location: "Cutting the Issue: Scoring Our Focus",
       },
       {
         quote:
-          "First, we cut the issue by turning a larger problem into a smaller more manageable issue. Breaking down bigger-picture problems into more manageable parts allows us to build and win campaigns around focused issues. In this way, the larger problem gets addressed piece by piece.",
-        location: "Campaign Goals: Where Do We Want to Go?",
+          "If you fill your day with sand (busywork), the big rocks (what matters) won't fit. Big Rocks (High-Impact): Direct voter contact, organizing house meetings, building community leadership. Sand & Pebbles (Maintenance): Responding to endless emails, routine errands, administrative busywork. The Golden Rule: Schedule your Big Rocks first. You are now grounded in Dimple’s story, equipped with the 3 Dimensions of Power, and prepared to manage your time and voice on the campaign trail. Let your work speak for you.",
+        location: "The Organizer’s Capacity / Conclusion: Our Collective Purpose",
       },
     ],
     prompts: [
-      "How can I support people in using their power to accomplish real change?",
-      "When you are 100, what will allow you to look back and feel that you have lived into your purpose?",
-      "What is one issue-sized piece of a bigger problem this campaign can actually work this week?",
-    ],
-  },
-  {
-    id: "people",
-    title: "People",
-    leaveWith:
-      "Organizing turns voluntary effort into shared power by finding people, telling a public story, and building relationships on shared interest — not on pretending you have no self-interest.",
-    source:
-      "Week 1 packet — People (8–11 Aug 2023), Organize NC Fellowship Training Intensive.",
-    excerpts: [
-      {
-        quote:
-          "Organizing is when people combine the individual resources they have into the shared power that they need to achieve a common purpose.",
-        location: "Workshop Goals and Why We’re Here",
-      },
-      {
-        quote:
-          "Self-interest is a relational concept, a medium for exchange in the public arena. Where selfishness puts self before others, and selflessness puts others before self, self-interest is about understanding “self with others” — the basis of relationality and acting together.",
-        location: "Issues, Interests & Values",
-      },
-      {
-        quote:
-          "Each of us can learn to tell a story that can move others to action. We each have stories of challenge, or we wouldn’t think the world needed changing. And we each have stories of hope, or we wouldn’t think we could change it. You will learn to tell a story about yourself (story of self), the community whom you are organizing (story of us), and the action required to create change (story of now).",
-        location: "Story of Self: Communicating My Values to Others",
-      },
-    ],
-    prompts: [
-      "Who am I? Who are my people?",
-      "How can I build public relationships rooted in shared interest?",
-      "What is one story of challenge and one story of hope I could tell in a 1:1?",
+      "Goal, analysis, strategy, or tactics — which one is still fuzzy for you?",
+      "Score one Charlotte issue against the five cutting questions. Is it actually winnable this season?",
+      "What is your big rock this week, and what sand are you going to leave in the dish?",
     ],
   },
 ];

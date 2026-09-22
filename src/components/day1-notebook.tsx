@@ -1,4 +1,10 @@
-import { DAY1_MODULES, DAY1_SOURCE_NOTE, type TrainingModule } from "@/lib/training-day1";
+import {
+  DAY1_INTENSIVE,
+  DAY1_MODULES,
+  DAY1_PLAYBOOK,
+  DAY1_SOURCE_NOTE,
+  type TrainingModule,
+} from "@/lib/training-day1";
 
 function ModuleCard({ module }: { module: TrainingModule }) {
   return (
@@ -21,7 +27,7 @@ function ModuleCard({ module }: { module: TrainingModule }) {
       <div className="mt-3 space-y-5">
         {module.excerpts.map((excerpt) => (
           <blockquote
-            key={excerpt.quote.slice(0, 40)}
+            key={excerpt.quote.slice(0, 48)}
             className="border-l-2 border-[#1e3a6e] pl-4 text-[17px] leading-7"
           >
             <p>“{excerpt.quote}”</p>
@@ -40,6 +46,7 @@ export function Day1Notebook() {
     <div className="grid gap-6 min-[900px]:grid-cols-[13rem_1fr]">
       <nav className="min-[900px]:sticky min-[900px]:top-4 min-[900px]:self-start">
         <p className="hub-kicker text-navy">Day 1</p>
+        <p className="mt-2 text-sm leading-6 text-[#5c574c]">{DAY1_INTENSIVE}</p>
         <ul className="mt-3 flex flex-wrap gap-2 min-[900px]:flex-col">
           {DAY1_MODULES.map((module) => (
             <li key={module.id}>
@@ -54,6 +61,7 @@ export function Day1Notebook() {
         </ul>
       </nav>
       <div className="space-y-6">
+        <p className="text-sm font-medium leading-6 text-[#222]">{DAY1_PLAYBOOK}</p>
         <p className="text-sm leading-6 text-[#5c574c]">{DAY1_SOURCE_NOTE}</p>
         {DAY1_MODULES.map((module) => (
           <ModuleCard key={module.id} module={module} />

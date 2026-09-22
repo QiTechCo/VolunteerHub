@@ -9,7 +9,7 @@ export default async function TrainingPage() {
     <PageShell
       kicker="Training"
       title="Day 1 notebook"
-      description="Three short modules for new volunteers: Power, Purpose, and People. Read the leave-with lines, sit with the prompts, then take a published shift. This is a notebook, not the full packets."
+      description="People, Power, Purpose — the Volunteer Organizing Intensive playbook. Read the leave-with lines, sit with the prompts, then take a published shift. This is a notebook, not the full deck."
     >
       <Day1Notebook />
       <div className="mt-10">
