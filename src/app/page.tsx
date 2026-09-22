@@ -15,7 +15,7 @@ export default async function HubHomePage() {
           <div>
             <p className="hub-kicker text-navy">Volunteer Hub</p>
             <h1 className="mt-4 text-3xl min-[641px]:text-4xl">
-              Volunteers are critical part of our campaign
+              Volunteers are a critical part of our campaign.
             </h1>
             <p className="mt-5 max-w-xl">
               A single, passionate volunteer can help more than the world&apos;s largest
