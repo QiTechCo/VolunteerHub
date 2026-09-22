@@ -97,7 +97,7 @@ export function ShiftForm({
               defaultChecked={capMap.has(slug) || !shift}
               className="size-4 accent-[#222]"
             />
-            <span className="w-40">{ROLE_COPY[slug].title}</span>
+            <span className="w-44">{ROLE_COPY[slug].title}</span>
             <input
               type="number"
               min={1}

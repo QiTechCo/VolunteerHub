@@ -68,6 +68,12 @@ async function main() {
     today.day,
     (3 - today.weekday + 7) % 7 || 7,
   );
+  const nextThu = addCalendarDays(
+    today.year,
+    today.month,
+    today.day,
+    (4 - today.weekday + 7) % 7 || 7,
+  );
   const lastSat = addCalendarDays(sat.year, sat.month, sat.day, -7);
   const oldSat = addCalendarDays(sat.year, sat.month, sat.day, -63);
 
@@ -128,6 +134,7 @@ async function main() {
         create: [
           { roleSlug: "event_hosting", priority: 1 },
           { roleSlug: "poll_greeting", priority: 2 },
+          { roleSlug: "phone_banking", priority: 3 },
         ],
       },
       availability: {
@@ -179,7 +186,7 @@ async function main() {
     },
   });
 
-  await prisma.volunteer.create({
+  const alex = await prisma.volunteer.create({
     data: {
       id: "vol_alex",
       email: "alex.rivera@volunteerhub.local",
@@ -197,7 +204,10 @@ async function main() {
         0,
       ),
       rolePrefs: {
-        create: [{ roleSlug: "canvassing", priority: 1 }],
+        create: [
+          { roleSlug: "canvassing", priority: 1 },
+          { roleSlug: "text_banking", priority: 2 },
+        ],
       },
     },
   });
@@ -241,6 +251,34 @@ async function main() {
       visibility: "public",
       whatToBring: "A photo ID if you have one. Remain outside the buffer zone staff will mark.",
       roleCaps: { create: [{ roleSlug: "poll_greeting", capacity: 2 }] },
+    },
+  });
+
+  const phones = await prisma.shift.create({
+    data: {
+      id: "shift_phone_banking",
+      title: "Weeknight phone bank",
+      locationName: "Campaign HQ call room, Charlotte",
+      startsAt: at(nextWed.year, nextWed.month, nextWed.day, 18, 0),
+      endsAt: at(nextWed.year, nextWed.month, nextWed.day, 20, 0),
+      status: "published",
+      visibility: "public",
+      whatToBring: "A quiet place and a charged phone. The call list is shared at the start of the shift.",
+      roleCaps: { create: [{ roleSlug: "phone_banking", capacity: 10 }] },
+    },
+  });
+
+  const texts = await prisma.shift.create({
+    data: {
+      id: "shift_text_banking",
+      title: "Text bank — voter reminders",
+      locationName: "Remote text bank — join details on the shift",
+      startsAt: at(nextThu.year, nextThu.month, nextThu.day, 18, 0),
+      endsAt: at(nextThu.year, nextThu.month, nextThu.day, 20, 0),
+      status: "published",
+      visibility: "public",
+      whatToBring: "A charged phone or laptop. Login for the texting list is shared at the start of the shift.",
+      roleCaps: { create: [{ roleSlug: "text_banking", capacity: 8 }] },
     },
   });
 
@@ -392,6 +430,28 @@ async function main() {
       minutes: 180,
       source: "shift_length",
       status: "confirmed",
+    },
+  });
+
+  await prisma.assignment.create({
+    data: {
+      volunteerId: jordan.id,
+      shiftId: phones.id,
+      roleSlug: "phone_banking",
+      status: "registered",
+      source: "portal",
+      registeredAt: new Date(),
+    },
+  });
+
+  await prisma.assignment.create({
+    data: {
+      volunteerId: alex.id,
+      shiftId: texts.id,
+      roleSlug: "text_banking",
+      status: "registered",
+      source: "portal",
+      registeredAt: new Date(),
     },
   });
 

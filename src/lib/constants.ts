@@ -25,6 +25,8 @@ export const ROLE_SLUGS = [
   "poll_greeting",
   "sign_posting",
   "event_hosting",
+  "phone_banking",
+  "text_banking",
 ] as const;
 
 export type RoleSlug = (typeof ROLE_SLUGS)[number];
@@ -56,6 +58,18 @@ export const ROLE_COPY: Record<
     description:
       "Host a house gathering. Mark that you are willing to host on your profile; staff publishes the host shift.",
     trustLevel: "high",
+  },
+  phone_banking: {
+    title: "Phone banking",
+    description:
+      "Call through the list staff publishes on the shift. The meeting point or dial-in and hours are on the shift card.",
+    trustLevel: "low",
+  },
+  text_banking: {
+    title: "Text banking",
+    description:
+      "Send campaign texts from the list and tool named on the shift. Times are on the shift card.",
+    trustLevel: "low",
   },
 };
 
