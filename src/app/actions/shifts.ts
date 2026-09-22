@@ -5,6 +5,7 @@ import { logEmail } from "@/lib/audit";
 import { formatInZone } from "@/lib/datetime";
 import { cancelAssignment, signupForShift } from "@/lib/scheduling";
 import { requireVolunteer, type ActionState } from "@/app/actions/auth";
+import { roleDisplayName } from "@/lib/constants";
 
 export async function signupAction(
   _prev: ActionState,
@@ -33,7 +34,7 @@ export async function signupAction(
       toEmail: volunteer.email,
       kind: "waitlist",
       subject: `Waitlisted: ${shift.title}`,
-      body: `The ${roleSlug.replace("_", " ")} seats on ${shift.title} (${when}) are full. You are on the waitlist in signup order. If a seat opens, Hub will move you to registered.`,
+      body: `The ${roleDisplayName(roleSlug)} seats on ${shift.title} (${when}) are full. You are on the waitlist in signup order. If a seat opens, Hub will move you to registered.`,
     });
   } else if (assignment.status === "pending_approval") {
     await logEmail({

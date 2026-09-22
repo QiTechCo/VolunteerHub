@@ -288,7 +288,7 @@ async function main() {
   const oldSigns = await prisma.shift.create({
     data: {
       id: "shift_old_signs",
-      title: "Westside sign posting",
+      title: "Westside yard sign posting",
       locationName: "West Boulevard corridor",
       startsAt: at(oldSat.year, oldSat.month, oldSat.day, 9, 0),
       endsAt: at(oldSat.year, oldSat.month, oldSat.day, 12, 0),

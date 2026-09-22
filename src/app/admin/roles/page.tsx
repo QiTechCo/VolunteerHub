@@ -10,7 +10,7 @@ export default async function RolesPage() {
     <PageShell
       kicker="Roles & screening"
       title="Role catalog"
-      description="Canvassing, poll greeting, sign posting, and event hosting are the v1 roles. High-trust hosting stays pending until staff assign or approve."
+      description="Canvassing, poll greeting, yard sign posting, and event hosting are the v1 roles. High-trust hosting stays pending until staff assign or approve."
     >
       <div className="grid gap-4">
         {roles.map((role) => (

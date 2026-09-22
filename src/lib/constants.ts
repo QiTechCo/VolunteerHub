@@ -46,7 +46,7 @@ export const ROLE_COPY: Record<
     trustLevel: "low",
   },
   sign_posting: {
-    title: "Sign posting",
+    title: "Yard sign posting",
     description:
       "Place or pick up yard signs at the locations staff publish on the shift.",
     trustLevel: "low",
@@ -58,6 +58,13 @@ export const ROLE_COPY: Record<
     trustLevel: "high",
   },
 };
+
+export function roleDisplayName(slug: string) {
+  if ((ROLE_SLUGS as readonly string[]).includes(slug)) {
+    return ROLE_COPY[slug as RoleSlug].title;
+  }
+  return slug.replaceAll("_", " ");
+}
 
 export const OCCUPYING_STATUSES = [
   "registered",
