@@ -47,6 +47,7 @@ export async function SiteHeader() {
             height={140}
             className="h-[72px] w-auto max-[640px]:h-[56px]"
             priority
+            unoptimized
           />
         </Link>
         <nav className="hidden items-center gap-5 min-[641px]:flex">

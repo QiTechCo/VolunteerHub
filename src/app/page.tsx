@@ -21,7 +21,7 @@ export default async function HubHomePage() {
               check. You can really make a difference.
             </p>
             <p className="mt-4 max-w-xl text-[#5c574c]">
-              This is the campaign&apos;s shift desk: register, pick a role, and take an
+              This is the campaign&apos;s shift desk: register, pick a role, and take a
               published shift. Donation and voter-registration tools stay on the{" "}
               <a href={CAMPAIGN_HOME} className="underline">
                 campaign home
