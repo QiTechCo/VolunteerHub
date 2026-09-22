@@ -26,8 +26,7 @@ export const metadata: Metadata = {
   description:
     "Volunteer Hub for Dimple Ajmera’s Charlotte campaign: how to help, shift signup, hours, and coordinator tools.",
   icons: {
-    // Next prefixes metadata icon paths with `basePath`.
-    icon: "/volunteer-hub-logo.jpg",
+    icon: "/volunteer/volunteer-hub-logo.jpg",
   },
 };
 
