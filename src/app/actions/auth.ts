@@ -34,6 +34,12 @@ export async function requireVolunteer(): Promise<Extract<Session, { kind: "volu
   return session as Extract<Session, { kind: "volunteer" }>;
 }
 
+export async function requireHubUser(): Promise<Session> {
+  const session = await getSession();
+  if (!session) await redirectToHub("/login?next=/training");
+  return session as Session;
+}
+
 export async function requireStaff(): Promise<Extract<Session, { kind: "staff" }>> {
   const session = await getSession();
   if (!session) await redirectToHub("/login?next=/admin");
@@ -132,7 +138,10 @@ export async function loginAction(
       role: staff.role as StaffRole,
     });
     await logAudit({ action: "staff.login", actorStaffId: staff.id });
-    const dest = next.startsWith("/admin") && isSafeHubPath(next) ? next : "/admin";
+    const dest =
+      isSafeHubPath(next) && (next.startsWith("/admin") || next.startsWith("/training"))
+        ? next
+        : "/admin";
     await redirectToHub(dest);
     return {};
   }

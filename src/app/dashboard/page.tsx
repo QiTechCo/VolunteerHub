@@ -73,6 +73,14 @@ export default async function DashboardPage() {
         </div>
       </div>
 
+      <div className="mt-4 border border-[#d7d0c2] bg-white p-5">
+        <p className="hub-kicker">Training</p>
+        <p className="mt-2">Day 1 notebook — Power, Purpose, People.</p>
+        <Link href="/training" className="mt-3 inline-block underline">
+          Open Day 1
+        </Link>
+      </div>
+
       <div className="mt-10">
         <h2 className="text-xl">Next shift</h2>
         {next ? (

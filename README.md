@@ -48,6 +48,7 @@ Copy `.env.example` to `.env` and set `AUTH_SECRET` before any real deployment. 
 - Volunteer profile, documents (resume/CV/bio), my shifts, hours ledger
 - Staff desk: people + segments, schedule CRUD, attendance, roles, settings
 - Volunteer Hub lockup in the header (campaign-provided artwork)
+- Day 1 training notebook at `/training` (Power, Purpose, People)
 
 ## Production notes
 

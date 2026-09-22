@@ -85,6 +85,12 @@ const nextConfig: NextConfig = {
         permanent: false,
         basePath: false,
       },
+      {
+        source: "/training",
+        destination: "/volunteer/training",
+        permanent: false,
+        basePath: false,
+      },
     ];
   },
 };

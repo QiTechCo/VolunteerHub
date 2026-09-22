@@ -15,6 +15,7 @@ export async function SiteHeader() {
   const session = await getSession();
   const volunteerLinks = [
     { href: "/dashboard", label: "Dashboard" },
+    { href: "/training", label: "Training" },
     { href: "/shifts", label: "Shift board" },
     { href: "/my-shifts", label: "My shifts" },
     { href: "/hours", label: "Hours" },
@@ -23,6 +24,7 @@ export async function SiteHeader() {
   ];
   const staffLinks = [
     { href: "/admin", label: "Desk" },
+    { href: "/training", label: "Training" },
     { href: "/admin/people", label: "People" },
     { href: "/admin/schedule", label: "Schedule" },
     { href: "/admin/attendance", label: "Attendance" },
