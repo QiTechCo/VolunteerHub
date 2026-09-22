@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ROLE_COPY, ROLE_SLUGS, CAMPAIGN_HOME } from "@/lib/constants";
+import { RoleHelpCards } from "@/components/role-help-cards";
+import { CAMPAIGN_HOME } from "@/lib/constants";
 import { prisma } from "@/lib/db";
 
 export default async function HubHomePage() {
@@ -63,20 +64,7 @@ export default async function HubHomePage() {
       <section className="mx-auto max-w-6xl px-4 py-12">
         <p className="hub-kicker text-navy">Roles</p>
         <h2 className="mt-3 text-2xl">How you can help</h2>
-        <div className="mt-8 grid gap-4 min-[641px]:grid-cols-2">
-          {ROLE_SLUGS.map((slug) => (
-            <Link
-              key={slug}
-              href={`/shifts?role=${slug}`}
-              className="border border-[#d7d0c2] bg-white p-5 hover:border-[#222]"
-            >
-              <h3 className="text-base">{ROLE_COPY[slug].title}</h3>
-              <p className="mt-3 normal-case tracking-normal">
-                {ROLE_COPY[slug].description}
-              </p>
-            </Link>
-          ))}
-        </div>
+        <RoleHelpCards />
       </section>
     </div>
   );
