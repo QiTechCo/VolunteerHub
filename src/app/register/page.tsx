@@ -1,12 +1,12 @@
 import { RegisterForm } from "@/components/register-form";
 import { PageShell } from "@/components/ui-copy";
 import { getSession } from "@/lib/auth";
-import { redirect } from "next/navigation";
+import { redirectToHub } from "@/lib/redirect";
 
 export default async function RegisterPage() {
   const session = await getSession();
-  if (session?.kind === "staff") redirect("/admin");
-  if (session?.kind === "volunteer") redirect("/dashboard");
+  if (session?.kind === "staff") await redirectToHub("/admin");
+  if (session?.kind === "volunteer") await redirectToHub("/dashboard");
   return (
     <PageShell
       kicker="Account"

@@ -1,7 +1,6 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { canEditSchedule, canManagePeople } from "@/lib/auth";
 import { ROLE_SLUGS } from "@/lib/constants";
@@ -9,6 +8,7 @@ import { parseDatetimeLocal } from "@/lib/datetime";
 import { logAudit } from "@/lib/audit";
 import { cancelAssignment, setAttendance, signupForShift } from "@/lib/scheduling";
 import { requireStaff, type ActionState } from "@/app/actions/auth";
+import { redirectToHub } from "@/lib/redirect";
 
 function parseCaps(formData: FormData) {
   const caps: { roleSlug: string; capacity: number }[] = [];
@@ -106,7 +106,8 @@ export async function saveShiftAction(
   revalidatePath("/admin/schedule");
   revalidatePath(`/admin/schedule/${id}`);
   revalidatePath("/shifts");
-  redirect(`/admin/schedule/${id}`);
+  await redirectToHub(`/admin/schedule/${id}`);
+  return {};
 }
 
 export async function setShiftStatusAction(

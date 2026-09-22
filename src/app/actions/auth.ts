@@ -1,6 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
 import {
@@ -15,6 +14,7 @@ import {
 import { logAudit } from "@/lib/audit";
 import { ROLE_SLUGS, type StaffRole } from "@/lib/constants";
 import { digitsOnly } from "@/lib/phone";
+import { isSafeHubPath, redirectToHub } from "@/lib/redirect";
 
 export type ActionState = { error?: string; success?: string };
 
@@ -29,16 +29,16 @@ const registerSchema = z.object({
 export async function requireVolunteer(): Promise<Extract<Session, { kind: "volunteer" }>> {
   const session = await getSession();
   if (!session || session.kind !== "volunteer") {
-    redirect("/login");
+    await redirectToHub("/login");
   }
-  return session;
+  return session as Extract<Session, { kind: "volunteer" }>;
 }
 
 export async function requireStaff(): Promise<Extract<Session, { kind: "staff" }>> {
   const session = await getSession();
-  if (!session) redirect("/login?next=/admin");
-  if (!isStaff(session)) redirect("/admin/denied");
-  return session;
+  if (!session) await redirectToHub("/login?next=/admin");
+  if (!isStaff(session)) await redirectToHub("/admin/denied");
+  return session as Extract<Session, { kind: "staff" }>;
 }
 
 export async function registerVolunteer(
@@ -104,7 +104,8 @@ export async function registerVolunteer(
     name: volunteer.name,
   });
 
-  redirect("/dashboard");
+  await redirectToHub("/dashboard");
+  return {};
 }
 
 export async function loginAction(
@@ -131,7 +132,9 @@ export async function loginAction(
       role: staff.role as StaffRole,
     });
     await logAudit({ action: "staff.login", actorStaffId: staff.id });
-    redirect(next.startsWith("/admin") ? next : "/admin");
+    const dest = next.startsWith("/admin") && isSafeHubPath(next) ? next : "/admin";
+    await redirectToHub(dest);
+    return {};
   }
 
   const volunteer = await prisma.volunteer.findUnique({ where: { email } });
@@ -146,10 +149,10 @@ export async function loginAction(
       name: volunteer.name,
     });
     await logAudit({ action: "volunteer.login", volunteerId: volunteer.id });
-    if (next.startsWith("/") && !next.startsWith("/admin")) {
-      redirect(next);
+    if (isSafeHubPath(next) && !next.startsWith("/admin")) {
+      await redirectToHub(next);
     }
-    redirect("/dashboard");
+    await redirectToHub("/dashboard");
   }
 
   return { error: "Email or password did not match." };
@@ -157,5 +160,5 @@ export async function loginAction(
 
 export async function logoutAction() {
   await clearSession();
-  redirect("/");
+  await redirectToHub("/");
 }

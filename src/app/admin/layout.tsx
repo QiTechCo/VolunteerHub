@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { getSession, isStaff } from "@/lib/auth";
+import { redirectToHub } from "@/lib/redirect";
 
 export default async function AdminLayout({
   children,
@@ -8,8 +8,11 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   const session = await getSession();
-  if (!session) redirect("/login?next=/admin");
+  if (!session) {
+    await redirectToHub("/login?next=/admin");
+  }
   if (!isStaff(session)) {
+    // Denied lives under /admin so this layout still wraps it.
     return children;
   }
   return (

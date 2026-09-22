@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
-import { CAMPAIGN_HOME } from "@/lib/constants";
+import { BASE_PATH, CAMPAIGN_HOME } from "@/lib/constants";
 import { logoutAction } from "@/app/actions/auth";
 import { MobileNav } from "@/components/mobile-nav";
 import { Button } from "@/components/ui/button";
@@ -41,7 +41,7 @@ export async function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 max-[640px]:py-2">
         <Link href="/" className="flex shrink-0 items-center">
           <Image
-            src="/volunteer-hub-logo.jpg"
+            src={`${BASE_PATH}/volunteer-hub-logo.jpg`}
             alt="Volunteer Hub, Dimple Ajmera for Charlotte campaign"
             width={168}
             height={140}

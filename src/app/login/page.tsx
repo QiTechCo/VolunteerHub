@@ -1,7 +1,7 @@
 import { LoginForm } from "@/components/login-form";
 import { PageShell } from "@/components/ui-copy";
 import { getSession } from "@/lib/auth";
-import { redirect } from "next/navigation";
+import { redirectToHub } from "@/lib/redirect";
 
 export default async function LoginPage({
   searchParams,
@@ -9,8 +9,8 @@ export default async function LoginPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const session = await getSession();
-  if (session?.kind === "staff") redirect("/admin");
-  if (session?.kind === "volunteer") redirect("/dashboard");
+  if (session?.kind === "staff") await redirectToHub("/admin");
+  if (session?.kind === "volunteer") await redirectToHub("/dashboard");
   const params = await searchParams;
   const next = typeof params.next === "string" ? params.next : undefined;
   return (
