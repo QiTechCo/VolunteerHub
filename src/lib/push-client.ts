@@ -1,5 +1,5 @@
 export const SW_PATH = "/volunteer/sw.js";
-export const SW_SCOPE = "/volunteer/";
+export const SW_SCOPE = "/volunteer";
 
 export function isStandaloneDisplay() {
   if (typeof window === "undefined") return false;
@@ -24,7 +24,10 @@ function urlBase64ToUint8Array(base64String: string) {
 
 export async function registerHubServiceWorker() {
   if (!("serviceWorker" in navigator)) return null;
-  return navigator.serviceWorker.register(SW_PATH, { scope: SW_SCOPE });
+  return navigator.serviceWorker.register(SW_PATH, {
+    scope: SW_SCOPE,
+    updateViaCache: "none",
+  });
 }
 
 export async function localShowNotification(title: string, body: string, url = "/volunteer/") {
@@ -64,24 +67,37 @@ export async function subscribeHubPush() {
     );
     return { mode: "mock" as const };
   }
-  const subscription = await registration.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(config.publicKey),
-  });
-  const json = subscription.toJSON();
-  const res = await fetch("/volunteer/api/push/subscribe", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      endpoint: json.endpoint,
-      keys: json.keys,
-    }),
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error((err as { error?: string }).error || "Could not save this device.");
+  try {
+    const subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(config.publicKey),
+    });
+    const json = subscription.toJSON();
+    const res = await fetch("/volunteer/api/push/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        endpoint: json.endpoint,
+        keys: json.keys,
+      }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error((err as { error?: string }).error || "Could not save this device.");
+    }
+    return { mode: "web-push" as const };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "";
+    if (message.startsWith("Could not save") || message.startsWith("Log in")) {
+      throw error;
+    }
+    await localShowNotification(
+      "Volunteer Hub is ready",
+      "This browser could not reach a Web Push service. Showing a local ping so you can still see how reminders look.",
+      "/volunteer/dashboard",
+    );
+    return { mode: "mock" as const };
   }
-  return { mode: "web-push" as const };
 }
 
 export async function unsubscribeHubPush() {

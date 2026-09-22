@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
         source: "/sw.js",
         headers: [
           { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Service-Worker-Allowed", value: "/volunteer" },
         ],
       },
       {
@@ -108,6 +109,12 @@ const nextConfig: NextConfig = {
       {
         source: "/install",
         destination: "/volunteer/install",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/icons/:path*",
+        destination: "/volunteer/icons/:path*",
         permanent: false,
         basePath: false,
       },

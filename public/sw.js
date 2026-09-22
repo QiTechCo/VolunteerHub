@@ -1,5 +1,5 @@
 const BASE = "/volunteer";
-const CACHE = "vh-hub-v1";
+const CACHE = "vh-hub-v3";
 const PRECACHE = [
   `${BASE}/offline.html`,
   `${BASE}/icons/icon-192.png`,
@@ -10,11 +10,18 @@ const PRECACHE = [
 ];
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE);
-      await Promise.allSettled(PRECACHE.map((url) => cache.add(url)));
-      await self.skipWaiting();
+      for (const url of PRECACHE) {
+        try {
+          const res = await fetch(url, { cache: "reload", signal: AbortSignal.timeout(4000) });
+          if (res.ok) await cache.put(url, res.clone());
+        } catch {
+          /* keep installing even if one asset is slow */
+        }
+      }
     })(),
   );
 });
@@ -102,7 +109,8 @@ async function handleFetch(request, url) {
   if (isDoc) {
     try {
       const fresh = await fetch(request);
-      if (fresh.ok && !hasSessionCookie(request) && isPublicSitePath(url)) {
+      if (!fresh.ok) throw new Error("bad status");
+      if (!hasSessionCookie(request) && isPublicSitePath(url)) {
         const cache = await caches.open(CACHE);
         await cache.put(request, fresh.clone());
       }

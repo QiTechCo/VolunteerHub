@@ -2,7 +2,9 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { registerHubServiceWorker } from "@/lib/push-client";
+import { OfflinePanel } from "@/components/offline-panel";
 
 function subscribeOnline(onStoreChange: () => void) {
   window.addEventListener("online", onStoreChange);
@@ -25,7 +27,14 @@ export function PwaProvider({
     () => !navigator.onLine,
     () => false,
   );
+  const pathname = usePathname();
   const [hint, setHint] = useState(false);
+  const showOfflinePanel =
+    offline &&
+    (pathname === "/training" ||
+      pathname.startsWith("/training/") ||
+      pathname === "/shifts" ||
+      pathname.startsWith("/shifts/"));
 
   useEffect(() => {
     void registerHubServiceWorker();
@@ -74,7 +83,7 @@ export function PwaProvider({
           </button>
         </div>
       ) : null}
-      {children}
+      {showOfflinePanel ? <OfflinePanel /> : children}
     </>
   );
 }
