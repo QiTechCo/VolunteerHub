@@ -1,0 +1,241 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+/// Hub volunteer account. Email is the login key.
+model Volunteer {
+  id                     String    @id
+  email                  String    @unique
+  passwordHash           String
+  phone                  String?
+  name                   String
+  zip                    String?
+  address                String?
+  smsTransactionalOptIn  Boolean   @default(false)
+  smsMarketingOptIn      Boolean   @default(false)
+  mobilizePersonId       String?
+  vanMycampaignId        String?
+  status                 String    @default("active")
+  willingToHost          Boolean   @default(false)
+  maxShiftsPerWeek       Int?
+  timezone               String    @default("America/New_York")
+  emailVerifiedAt        DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  availability Availability[]
+  rolePrefs    VolunteerRolePref[]
+  trainings    Training[]
+  assignments  Assignment[]
+  hoursEntries HoursEntry[]
+  creditEntries CreditEntry[]
+  documents    Document[]
+  recLetters   RecLetterRequest[]
+  staffNotes   StaffNote[]
+
+  @@index([phone])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Availability {
+  id          String    @id @default(cuid())
+  volunteerId String
+  weekday     Int
+  startLocal  String
+  endLocal    String
+  timezone    String    @default("America/New_York")
+  volunteer   Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+
+  @@index([volunteerId])
+}
+
+model RoleCatalog {
+  slug             String  @id
+  title            String
+  description      String
+  trustLevel       String  @default("low")
+  requiresTraining Boolean @default(false)
+  sortOrder        Int     @default(0)
+
+  prefs       VolunteerRolePref[]
+  trainings   Training[]
+  caps        ShiftRoleCap[]
+  assignments Assignment[]
+}
+
+model VolunteerRolePref {
+  volunteerId String
+  roleSlug    String
+  priority    Int
+  volunteer   Volunteer   @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+  role        RoleCatalog @relation(fields: [roleSlug], references: [slug])
+
+  @@id([volunteerId, roleSlug])
+}
+
+model Training {
+  id          String      @id @default(cuid())
+  volunteerId String
+  roleSlug    String
+  completedAt DateTime
+  expiresAt   DateTime?
+  volunteer   Volunteer   @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+  role        RoleCatalog @relation(fields: [roleSlug], references: [slug])
+
+  @@unique([volunteerId, roleSlug])
+}
+
+model Shift {
+  id                    String    @id
+  title                 String
+  locationName          String
+  startsAt              DateTime
+  endsAt                DateTime
+  timezone              String    @default("America/New_York")
+  visibility            String    @default("public")
+  registrationClosesAt  DateTime?
+  status                String    @default("draft")
+  whatToBring           String?
+  notes                 String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  roleCaps    ShiftRoleCap[]
+  assignments Assignment[]
+
+  @@index([status, startsAt])
+  @@index([visibility, status])
+}
+
+model ShiftRoleCap {
+  id        String      @id @default(cuid())
+  shiftId   String
+  roleSlug  String
+  capacity  Int
+  shift     Shift       @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  role      RoleCatalog @relation(fields: [roleSlug], references: [slug])
+
+  @@unique([shiftId, roleSlug])
+}
+
+model Assignment {
+  id            String      @id @default(cuid())
+  volunteerId   String
+  shiftId       String
+  roleSlug      String
+  status        String
+  source        String
+  waitlistedAt  DateTime?
+  registeredAt  DateTime?
+  canceledAt    DateTime?
+  feedbackNote  String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  volunteer     Volunteer   @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+  shift         Shift       @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  role          RoleCatalog @relation(fields: [roleSlug], references: [slug])
+  hoursEntries  HoursEntry[]
+
+  @@index([shiftId, roleSlug, status])
+  @@index([volunteerId, status])
+}
+
+model HoursEntry {
+  id           String      @id @default(cuid())
+  volunteerId  String
+  assignmentId String?
+  minutes      Int
+  source       String
+  status       String
+  staffNote    String?
+  createdAt    DateTime    @default(now())
+  volunteer    Volunteer   @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+  assignment   Assignment? @relation(fields: [assignmentId], references: [id], onDelete: SetNull)
+
+  @@index([volunteerId, status])
+}
+
+/// Exists for a later recognition phase. No v1 UI.
+model CreditEntry {
+  id           String    @id @default(cuid())
+  volunteerId  String
+  hoursEntryId String?
+  points       Int
+  reason       String
+  createdAt    DateTime  @default(now())
+  volunteer    Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+}
+
+model Document {
+  id          String    @id @default(cuid())
+  volunteerId String
+  kind        String
+  storageKey  String
+  filename    String
+  contentType String
+  scannedAt   DateTime?
+  uploadedAt  DateTime  @default(now())
+  volunteer   Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+
+  @@index([volunteerId, kind])
+}
+
+/// Exists for a later rec-letter phase. No v1 UI.
+model RecLetterRequest {
+  id            String    @id @default(cuid())
+  volunteerId   String
+  status        String
+  requesterNote String?
+  reviewerId    String?
+  decisionNote  String?
+  pdfDocumentId String?
+  createdAt     DateTime  @default(now())
+  volunteer     Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+}
+
+model StaffUser {
+  id           String      @id
+  email        String      @unique
+  passwordHash String
+  name         String
+  role         String
+  createdAt    DateTime    @default(now())
+  notes        StaffNote[]
+  auditEvents  AuditEvent[]
+}
+
+model StaffNote {
+  id          String    @id @default(cuid())
+  volunteerId String
+  staffId     String
+  body        String
+  createdAt   DateTime  @default(now())
+  volunteer   Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+  staff       StaffUser @relation(fields: [staffId], references: [id])
+}
+
+model AuditEvent {
+  id           String     @id @default(cuid())
+  actorStaffId String?
+  volunteerId  String?
+  action       String
+  meta         String?
+  at           DateTime   @default(now())
+  staff        StaffUser? @relation(fields: [actorStaffId], references: [id])
+}
+
+model OutboundEmail {
+  id        String    @id @default(cuid())
+  toEmail   String
+  subject   String
+  body      String
+  kind      String
+  status    String    @default("logged_not_sent")
+  createdAt DateTime  @default(now())
+}
