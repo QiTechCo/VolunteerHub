@@ -103,6 +103,18 @@
     font-size: 17.6px;
     line-height: 1.86;
   }
+  body.has-mobile-dock main {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+  }
+  body.has-mobile-dock footer {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+  @media (min-width: 641px) {
+    body.has-mobile-dock main,
+    body.has-mobile-dock footer {
+      padding-bottom: 0;
+    }
+  }
   h1,
   h2,
   h3,

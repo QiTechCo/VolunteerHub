@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db";
 import { ROLE_COPY, ROLE_SLUGS, type RoleSlug } from "@/lib/constants";
 import { remainingSeats } from "@/lib/scheduling";
 import { rankShift } from "@/lib/ranking";
+import { ShiftsOfflineNote } from "@/components/shifts-offline-note";
 
 export default async function ShiftsPage({
   searchParams,
@@ -115,6 +116,7 @@ export default async function ShiftsPage({
       title="Published shifts"
       description="Meeting points only — no home addresses. Sign up stays on this site."
     >
+      <ShiftsOfflineNote />
       <div className="mb-6 flex flex-wrap gap-2">
         <Link
           href="/shifts"

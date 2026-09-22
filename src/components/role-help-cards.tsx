@@ -30,12 +30,12 @@ export function RoleHelpCards() {
             href={`/shifts?role=${slug}`}
             className="border border-[#d7d0c2] bg-white p-5 hover:border-[#222]"
           >
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col gap-4 min-[480px]:flex-row min-[480px]:items-start">
               <span
-                className="flex size-32 shrink-0 items-center justify-center bg-[#f7f3ea] text-navy"
+                className="flex size-24 shrink-0 items-center justify-center bg-[#f7f3ea] text-navy min-[480px]:size-32"
                 aria-hidden
               >
-                <Icon className="size-16" strokeWidth={1.5} />
+                <Icon className="size-12 min-[480px]:size-16" strokeWidth={1.5} />
               </span>
               <div className="min-w-0">
                 <h3 className="text-base">{ROLE_COPY[slug].title}</h3>

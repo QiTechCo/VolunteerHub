@@ -19,7 +19,7 @@ export default async function LoginPage({
       title="Log in"
       description="Use the email on your Volunteer Hub account. Staff and volunteers share this page; you land on the desk that matches your account."
     >
-      <div className="max-w-md border border-[#d7d0c2] bg-white p-6">
+      <div className="max-w-md border border-[#d7d0c2] bg-white p-5 min-[641px]:p-6">
         <LoginForm next={next} />
       </div>
     </PageShell>

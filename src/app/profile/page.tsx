@@ -1,5 +1,6 @@
 import { requireVolunteer } from "@/app/actions/auth";
 import { ProfileForm } from "@/components/profile-form";
+import { PushOptIn } from "@/components/push-opt-in";
 import { PageShell } from "@/components/ui-copy";
 import { prisma } from "@/lib/db";
 
@@ -16,8 +17,11 @@ export default async function ProfilePage() {
       title="Contact, availability, roles"
       description="Staff use this to match shifts. High-trust hosting still needs staff to publish the host shift."
     >
-      <div className="max-w-2xl border border-[#d7d0c2] bg-white p-6">
+      <div className="max-w-2xl border border-[#d7d0c2] bg-white p-5 min-[641px]:p-6">
         <ProfileForm volunteer={volunteer} />
+      </div>
+      <div className="mt-6 max-w-2xl">
+        <PushOptIn />
       </div>
     </PageShell>
   );

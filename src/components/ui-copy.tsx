@@ -40,7 +40,7 @@ export function PageShell({
   return (
     <div className={cn("mx-auto max-w-6xl px-4 py-10", className)}>
       {kicker ? <p className="hub-kicker text-navy">{kicker}</p> : null}
-      <h1 className="mt-3 max-w-3xl text-2xl min-[641px]:text-3xl">{title}</h1>
+      <h1 className="mt-3 max-w-3xl break-words text-2xl min-[641px]:text-3xl">{title}</h1>
       {description ? (
         <p className="mt-4 max-w-2xl text-[#222]">{description}</p>
       ) : null}

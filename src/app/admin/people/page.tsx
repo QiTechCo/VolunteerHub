@@ -74,7 +74,28 @@ export default async function PeoplePage({
       ) : filtered.length === 0 ? (
         <EmptyState title="No matches" body="Clear the search or pick another segment." />
       ) : (
-        <div className="overflow-x-auto border border-[#d7d0c2] bg-white">
+        <>
+          <ul className="space-y-3 min-[641px]:hidden">
+            {filtered.map((v) => (
+              <li key={v.id} className="border border-[#d7d0c2] bg-white p-4">
+                <Link href={`/admin/people/${v.id}`} className="font-medium underline">
+                  {v.name}
+                </Link>
+                <p className="mt-1 break-words text-sm text-[#5c574c]">
+                  {v.email}
+                  <br />
+                  {formatPhone(v.phone) || "—"} · {v.zip || "no ZIP"}
+                </p>
+                <p className="mt-2">
+                  <SegmentBadge segment={segments.get(v.id) ?? "new"} />
+                </p>
+                <p className="mt-2 text-sm">
+                  {v.rolePrefs.map((p) => p.role.title).join(", ") || "—"}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="hidden overflow-x-auto border border-[#d7d0c2] bg-white min-[641px]:block">
           <table className="w-full text-left">
             <thead className="border-b border-[#d7d0c2] bg-[#fcfcfc]">
               <tr>
@@ -107,7 +128,8 @@ export default async function PeoplePage({
               ))}
             </tbody>
           </table>
-        </div>
+          </div>
+        </>
       )}
     </PageShell>
   );

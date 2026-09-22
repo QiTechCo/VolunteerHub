@@ -37,6 +37,7 @@ model Volunteer {
   documents    Document[]
   recLetters   RecLetterRequest[]
   staffNotes   StaffNote[]
+  pushSubs     PushSubscription[]
 
   @@index([phone])
   @@index([status])
@@ -208,6 +209,23 @@ model StaffUser {
   createdAt    DateTime    @default(now())
   notes        StaffNote[]
   auditEvents  AuditEvent[]
+  pushSubs     PushSubscription[]
+}
+
+/// Browser push endpoint. Bound to the Hub account that opted in on this device.
+model PushSubscription {
+  id           String     @id @default(cuid())
+  endpoint     String     @unique
+  p256dh       String
+  auth         String
+  volunteerId  String?
+  staffUserId  String?
+  createdAt    DateTime   @default(now())
+  volunteer    Volunteer? @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+  staff        StaffUser? @relation(fields: [staffUserId], references: [id], onDelete: Cascade)
+
+  @@index([volunteerId])
+  @@index([staffUserId])
 }
 
 model StaffNote {

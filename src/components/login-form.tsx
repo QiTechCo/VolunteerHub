@@ -34,7 +34,7 @@ export function LoginForm({ next }: { next?: string }) {
           className={inputClass}
         />
       </Field>
-      <SubmitButton>Log in</SubmitButton>
+      <SubmitButton className="w-full min-[480px]:w-auto">Log in</SubmitButton>
       <p className="text-sm">
         New volunteer?{" "}
         <Link href="/register" className="underline">

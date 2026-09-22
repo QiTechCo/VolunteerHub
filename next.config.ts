@@ -3,7 +3,21 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   basePath: "/volunteer",
   allowedDevOrigins: ["127.0.0.1", "localhost"],
-  serverExternalPackages: ["@prisma/client", "prisma", "bcryptjs"],
+  serverExternalPackages: ["@prisma/client", "prisma", "bcryptjs", "web-push"],
+  async headers() {
+    return [
+      {
+        source: "/sw.js",
+        headers: [
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+        ],
+      },
+      {
+        source: "/offline.html",
+        headers: [{ key: "Cache-Control", value: "no-cache" }],
+      },
+    ];
+  },
   async redirects() {
     // Catch post-login Location headers that omit basePath.
     return [
@@ -88,6 +102,12 @@ const nextConfig: NextConfig = {
       {
         source: "/training",
         destination: "/volunteer/training",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/install",
+        destination: "/volunteer/install",
         permanent: false,
         basePath: false,
       },

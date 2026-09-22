@@ -68,7 +68,7 @@ export function RegisterForm() {
           default in this beta.
         </span>
       </label>
-      <SubmitButton>Create account</SubmitButton>
+      <SubmitButton className="w-full min-[480px]:w-auto">Create account</SubmitButton>
       <p className="text-sm">
         Already registered?{" "}
         <Link href="/login" className="underline">

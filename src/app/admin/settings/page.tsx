@@ -3,6 +3,8 @@ import { PageShell } from "@/components/ui-copy";
 import { prisma } from "@/lib/db";
 import { formatInZone } from "@/lib/datetime";
 import { CAMPAIGN_HOME, CONTACT_EMAIL } from "@/lib/constants";
+import { PushOptIn } from "@/components/push-opt-in";
+import { ReminderPingButton } from "@/components/reminder-ping-button";
 
 export default async function SettingsPage() {
   const staff = await requireStaff();
@@ -43,6 +45,11 @@ export default async function SettingsPage() {
             </a>
             .
           </p>
+          <p className="mt-4 text-sm">
+            Use Ping upcoming shifts as the stand-in for a morning-of reminder job. It
+            notifies opted-in volunteers on published shifts in the next 36 hours.
+          </p>
+          <ReminderPingButton />
         </div>
         <div className="border border-[#d7d0c2] bg-white p-5">
           <h2 className="text-lg">Staff accounts</h2>
@@ -72,6 +79,9 @@ export default async function SettingsPage() {
             </ul>
           )}
         </div>
+      </div>
+      <div className="mt-6">
+        <PushOptIn />
       </div>
       <div className="mt-6 border border-[#d7d0c2] bg-white p-5">
         <h2 className="text-lg">Recent audit events</h2>

@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { EB_Garamond, League_Spartan } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { PwaProvider } from "@/components/pwa-provider";
+import { MobileDock } from "@/components/mobile-dock";
+import { getSession } from "@/lib/auth";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
@@ -25,21 +28,43 @@ export const metadata: Metadata = {
   },
   description:
     "Volunteer Hub for Dimple Ajmera’s Charlotte campaign: how to help, shift signup, hours, and coordinator tools.",
+  applicationName: "Volunteer Hub",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Volunteer Hub",
+    statusBarStyle: "default",
+  },
   icons: {
-    icon: "/volunteer/volunteer-hub-logo.jpg",
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#f7f3ea",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const session = await getSession();
   return (
     <html
       lang="en"
       className={`${ebGaramond.variable} ${leagueSpartan.variable} light h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-cream text-foreground">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+      <body className="flex min-h-full flex-col overflow-x-clip bg-cream text-foreground">
+        <PwaProvider signedIn={Boolean(session)}>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          {session ? <MobileDock kind={session.kind} /> : null}
+        </PwaProvider>
       </body>
     </html>
   );

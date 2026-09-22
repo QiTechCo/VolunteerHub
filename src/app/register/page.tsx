@@ -13,7 +13,7 @@ export default async function RegisterPage() {
       title="Register to volunteer"
       description="Short signup. Add availability and documents after you are in. Email is your account key."
     >
-      <div className="max-w-lg border border-[#d7d0c2] bg-white p-6">
+      <div className="max-w-lg border border-[#d7d0c2] bg-white p-5 min-[641px]:p-6">
         <RegisterForm />
       </div>
     </PageShell>

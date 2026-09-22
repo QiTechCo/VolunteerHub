@@ -2,9 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
 import { BASE_PATH, CAMPAIGN_HOME } from "@/lib/constants";
-import { logoutAction } from "@/app/actions/auth";
 import { MobileNav } from "@/components/mobile-nav";
-import { Button } from "@/components/ui/button";
+import { LogoutButton } from "@/components/logout-button";
 
 const publicLinks = [
   { href: "/", label: "How to help" },
@@ -39,7 +38,7 @@ export async function SiteHeader() {
         : publicLinks;
 
   return (
-    <header className="border-b border-[#d7d0c2] bg-[#f7f3ea]">
+    <header className="border-b border-[#d7d0c2] bg-[#f7f3ea]" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 max-[640px]:py-2">
         <Link href="/" className="flex shrink-0 items-center">
           <Image
@@ -52,7 +51,7 @@ export async function SiteHeader() {
             unoptimized
           />
         </Link>
-        <nav className="hidden items-center gap-5 min-[641px]:flex">
+        <nav className="hidden min-[641px]:flex min-[641px]:flex-wrap min-[641px]:items-center min-[641px]:justify-end min-[641px]:gap-x-4 min-[641px]:gap-y-2">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -69,11 +68,7 @@ export async function SiteHeader() {
             Campaign home
           </a>
           {session ? (
-            <form action={logoutAction}>
-              <Button type="submit" variant="outline" className="hub-btn h-10 rounded-none px-4">
-                Log out
-              </Button>
-            </form>
+            <LogoutButton />
           ) : (
             <div className="flex items-center gap-2">
               <Link

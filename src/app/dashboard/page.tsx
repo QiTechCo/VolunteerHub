@@ -2,6 +2,7 @@ import Link from "next/link";
 import { requireVolunteer } from "@/app/actions/auth";
 import { EmptyState, PageShell } from "@/components/ui-copy";
 import { AssignmentRow } from "@/components/shift-card";
+import { PushOptIn } from "@/components/push-opt-in";
 import { prisma } from "@/lib/db";
 import { formatInZone, formatMinutes } from "@/lib/datetime";
 
@@ -79,6 +80,10 @@ export default async function DashboardPage() {
         <Link href="/training" className="mt-3 inline-block underline">
           Open Day 1
         </Link>
+      </div>
+
+      <div className="mt-4">
+        <PushOptIn />
       </div>
 
       <div className="mt-10">

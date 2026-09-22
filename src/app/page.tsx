@@ -46,7 +46,11 @@ export default async function HubHomePage() {
             <p className="mt-4 text-sm text-[#5c574c]">
               {upcoming === 0
                 ? "Shifts will appear when the campaign publishes them."
-                : `${upcoming} published shift${upcoming === 1 ? "" : "s"} on the board.`}
+                : `${upcoming} published shift${upcoming === 1 ? "" : "s"} on the board.`}{" "}
+              <Link href="/install" className="underline">
+                Install the app
+              </Link>
+              .
             </p>
           </div>
           <div className="border border-[#d7d0c2] bg-white p-6">

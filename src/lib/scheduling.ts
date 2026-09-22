@@ -2,6 +2,7 @@ import { OCCUPYING_STATUSES } from "@/lib/constants";
 import { prisma } from "@/lib/db";
 import { logAudit, logEmail } from "@/lib/audit";
 import { formatInZone, minutesBetween } from "@/lib/datetime";
+import { notifyVolunteer } from "@/lib/push";
 
 export async function filledCount(shiftId: string, roleSlug: string) {
   return prisma.assignment.count({
@@ -202,6 +203,11 @@ export async function cancelAssignment(input: {
         subject: `A seat opened: ${promoted.shift.title}`,
         body: `A waitlisted seat opened on ${promoted.shift.title} (${formatInZone(promoted.shift.startsAt, promoted.shift.timezone)}). You are now registered.`,
       });
+      await notifyVolunteer(promoted.volunteerId, {
+        title: `A seat opened: ${promoted.shift.title}`,
+        body: `You are now registered. ${formatInZone(promoted.shift.startsAt, promoted.shift.timezone)} at ${promoted.shift.locationName}.`,
+        url: `/shifts/${promoted.shift.id}`,
+      });
     }
   }
 
@@ -265,6 +271,23 @@ export async function setAttendance(input: {
         where: { id: next.id },
         data: { status: "registered", registeredAt: new Date() },
       });
+      const promoted = await prisma.assignment.findUnique({
+        where: { id: next.id },
+        include: { volunteer: true, shift: true },
+      });
+      if (promoted) {
+        await logEmail({
+          toEmail: promoted.volunteer.email,
+          kind: "waitlist_promoted",
+          subject: `A seat opened: ${promoted.shift.title}`,
+          body: `A waitlisted seat opened on ${promoted.shift.title} (${formatInZone(promoted.shift.startsAt, promoted.shift.timezone)}). You are now registered.`,
+        });
+        await notifyVolunteer(promoted.volunteerId, {
+          title: `A seat opened: ${promoted.shift.title}`,
+          body: `You are now registered. ${formatInZone(promoted.shift.startsAt, promoted.shift.timezone)} at ${promoted.shift.locationName}.`,
+          url: `/shifts/${promoted.shift.id}`,
+        });
+      }
     }
   }
 

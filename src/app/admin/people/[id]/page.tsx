@@ -52,7 +52,7 @@ export default async function PersonPage({
         <div className="space-y-5">
           <div className="border border-[#d7d0c2] bg-white p-5">
             <SegmentBadge segment={seg} />
-            <p className="mt-3">{volunteer.email}</p>
+            <p className="mt-3 break-words">{volunteer.email}</p>
             <p>{formatPhone(volunteer.phone) || "No phone"}</p>
             <p>ZIP {volunteer.zip || "—"}</p>
             <p className="text-sm text-[#5c574c]">

@@ -28,7 +28,22 @@ export default async function HoursPage() {
           body="Take a shift, then the coordinator marks you complete at the attendance desk."
         />
       ) : (
-        <div className="overflow-x-auto border border-[#d7d0c2] bg-white">
+        <>
+          <ul className="space-y-3 min-[641px]:hidden">
+            {entries.map((entry) => (
+              <li key={entry.id} className="border border-[#d7d0c2] bg-white p-4">
+                <p>
+                  {entry.assignment?.shift
+                    ? formatInZone(entry.assignment.shift.startsAt, entry.assignment.shift.timezone)
+                    : formatInZone(entry.createdAt)}
+                </p>
+                <p className="text-sm text-[#5c574c]">
+                  {entry.source.replace("_", " ")} · {formatMinutes(entry.minutes)} · {entry.status}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="hidden overflow-x-auto border border-[#d7d0c2] bg-white min-[641px]:block">
           <table className="w-full text-left text-[16px]">
             <thead className="border-b border-[#d7d0c2] bg-[#fcfcfc]">
               <tr>
@@ -53,7 +68,8 @@ export default async function HoursPage() {
               ))}
             </tbody>
           </table>
-        </div>
+          </div>
+        </>
       )}
     </PageShell>
   );

@@ -6,6 +6,7 @@ import { formatInZone } from "@/lib/datetime";
 import { cancelAssignment, signupForShift } from "@/lib/scheduling";
 import { requireVolunteer, type ActionState } from "@/app/actions/auth";
 import { roleDisplayName } from "@/lib/constants";
+import { notifyVolunteer } from "@/lib/push";
 
 export async function signupAction(
   _prev: ActionState,
@@ -51,6 +52,24 @@ export async function signupAction(
       body: `You are registered for ${shift.title} at ${shift.locationName} (${when}). Confirmation email is logged in this beta and not sent yet. Download the calendar invite from My shifts.`,
     });
   }
+
+  const pushTitle =
+    assignment.status === "waitlisted"
+      ? `Waitlisted: ${shift.title}`
+      : assignment.status === "pending_approval"
+        ? `Pending staff approval: ${shift.title}`
+        : `You're registered: ${shift.title}`;
+  const pushBody =
+    assignment.status === "waitlisted"
+      ? `The ${roleDisplayName(roleSlug)} seats are full. You are on the waitlist in signup order.`
+      : assignment.status === "pending_approval"
+        ? `Your hosting request is waiting on staff.`
+        : `${shift.locationName} · ${when}`;
+  await notifyVolunteer(session.id, {
+    title: pushTitle,
+    body: pushBody,
+    url: "/my-shifts",
+  });
 
   revalidatePath("/shifts");
   revalidatePath(`/shifts/${shiftId}`);

@@ -35,7 +35,22 @@ export default async function SchedulePage() {
           body="Create a timeslot, set seats per role, then mark it published to show on the public board."
         />
       ) : (
-        <div className="overflow-x-auto border border-[#d7d0c2] bg-white">
+        <>
+          <ul className="space-y-3 min-[641px]:hidden">
+            {rows.map(({ shift, capacity, filled }) => (
+              <li key={shift.id} className="border border-[#d7d0c2] bg-white p-4">
+                <Link href={`/admin/schedule/${shift.id}`} className="font-medium underline">
+                  {shift.title}
+                </Link>
+                <p className="mt-1 text-sm text-[#5c574c]">{shift.locationName}</p>
+                <p className="mt-2 text-sm">{formatInZone(shift.startsAt, shift.timezone)}</p>
+                <p className="mt-1 text-sm">
+                  {filled}/{capacity} · {shift.status} · {shift.visibility}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="hidden overflow-x-auto border border-[#d7d0c2] bg-white min-[641px]:block">
           <table className="w-full text-left">
             <thead className="border-b border-[#d7d0c2] bg-[#fcfcfc]">
               <tr>
@@ -65,7 +80,8 @@ export default async function SchedulePage() {
               ))}
             </tbody>
           </table>
-        </div>
+          </div>
+        </>
       )}
     </PageShell>
   );
