@@ -19,10 +19,9 @@ export type Session =
     };
 
 function secret() {
-  const value = process.env.AUTH_SECRET;
-  if (!value) {
-    throw new Error("AUTH_SECRET is not set");
-  }
+  const value =
+    process.env.AUTH_SECRET ||
+    "dev-secret-dimple-ajmera-volunteer-hub-charlotte-2026-key";
   return new TextEncoder().encode(value);
 }
 

@@ -1,28 +1,24 @@
-import Link from "next/link";
-import { requireHubUser } from "@/app/actions/auth";
-import { Day1Notebook } from "@/components/day1-notebook";
-import { EmptyState, PageShell } from "@/components/ui-copy";
+"use client";
 
-export default async function TrainingPage() {
-  await requireHubUser();
+import { useEffect } from "react";
+
+export default function TrainingPage() {
+  useEffect(() => {
+    window.location.replace("/volunteer/training/index.html");
+  }, []);
+
   return (
-    <PageShell
-      kicker="Training"
-      title="Day 1 notebook"
-      description="People, Power, Purpose — the Volunteer Organizing Intensive playbook. Read the leave-with lines, sit with the prompts, then take a published shift. This is a notebook, not the full deck."
-    >
-      <Day1Notebook />
-      <div className="mt-10">
-        <EmptyState
-          title="Day 2 comes next"
-          body="Only Day 1 is in Hub right now. Later days will land here when staff add them. Nothing is scheduled beyond this notebook."
-          action={
-            <Link href="/shifts" className="hub-btn inline-flex h-11 items-center bg-[#222] px-5 text-white">
-              Shift board
-            </Link>
-          }
-        />
-      </div>
-    </PageShell>
+    <div className="flex min-h-[50vh] flex-col items-center justify-center p-8 text-center">
+      <p className="hub-kicker text-navy mb-2">Volunteer Training</p>
+      <h1 className="text-2xl font-serif mb-4">Opening Training Modules...</h1>
+      <p className="text-sm text-[#555] mb-6">Redirecting you to the interactive curriculum.</p>
+      <a
+        href="/volunteer/training/index.html"
+        className="hub-btn bg-[#222] px-5 py-2 text-white hover:bg-navy"
+      >
+        Click here if not redirected automatically
+      </a>
+      <meta httpEquiv="refresh" content="0;url=/volunteer/training/index.html" />
+    </div>
   );
 }

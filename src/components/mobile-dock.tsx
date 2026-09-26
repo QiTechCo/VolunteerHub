@@ -33,14 +33,22 @@ export function MobileDock({ kind }: { kind: "volunteer" | "staff" }) {
       <ul className="mx-auto grid max-w-6xl grid-cols-3">
         {tabs.map((tab) => {
           const on = active(pathname, tab.href);
+          const cls = `flex min-h-12 items-center justify-center border-b-2 px-1 py-3 text-center font-[family-name:var(--font-spartan)] text-[0.62rem] font-semibold uppercase tracking-[0.16em] transition-colors ${
+            on
+              ? "border-[#b11a2b] text-[#1e3a6e]"
+              : "border-transparent text-[#222] hover:border-[#b11a2b] hover:text-[#1e3a6e]"
+          }`;
           return (
             <li key={tab.href}>
-              <Link
-                href={tab.href}
-                className={`flex min-h-12 items-center justify-center px-1 py-3 text-center font-[family-name:var(--font-spartan)] text-[0.62rem] font-semibold uppercase tracking-[0.16em] ${on ? "text-navy" : "text-[#222]"}`}
-              >
-                {tab.label}
-              </Link>
+              {tab.href === "/training" ? (
+                <a href="/volunteer/training/index.html" className={cls}>
+                  {tab.label}
+                </a>
+              ) : (
+                <Link href={tab.href} className={cls}>
+                  {tab.label}
+                </Link>
+              )}
             </li>
           );
         })}

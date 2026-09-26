@@ -73,9 +73,47 @@ export const ROLE_COPY: Record<
   },
 };
 
+export const TRAINING_SLUGS = [
+  "training_m1_people",
+  "training_m2_power",
+  "training_m3_purpose",
+  "organizing_intensive",
+] as const;
+
+export type TrainingSlug = (typeof TRAINING_SLUGS)[number];
+
+export const TRAINING_COPY: Record<
+  TrainingSlug,
+  { title: string; description: string; moduleKey: "m1" | "m2" | "m3" | "all" }
+> = {
+  training_m1_people: {
+    title: "Module 1 · People",
+    description: "Public narrative, one-on-one organizing, listening and base building.",
+    moduleKey: "m1",
+  },
+  training_m2_power: {
+    title: "Module 2 · Power",
+    description: "Power dynamics, leadership declarations, agitation and high-performing teams.",
+    moduleKey: "m2",
+  },
+  training_m3_purpose: {
+    title: "Module 3 · Purpose",
+    description: "Campaign planning, workload milestones, strategy, tactics and assessments.",
+    moduleKey: "m3",
+  },
+  organizing_intensive: {
+    title: "Organizing Intensive Certified",
+    description: "Completed all 3 modules of the Volunteer Organizing Intensive.",
+    moduleKey: "all",
+  },
+};
+
 export function roleDisplayName(slug: string) {
   if ((ROLE_SLUGS as readonly string[]).includes(slug)) {
     return ROLE_COPY[slug as RoleSlug].title;
+  }
+  if (slug in TRAINING_COPY) {
+    return TRAINING_COPY[slug as TrainingSlug].title;
   }
   return slug.replaceAll("_", " ");
 }

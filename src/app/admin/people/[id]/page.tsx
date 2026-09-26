@@ -27,7 +27,7 @@ export default async function PersonPage({
     include: {
       rolePrefs: { include: { role: true } },
       availability: true,
-      trainings: true,
+      trainings: { include: { role: true }, orderBy: { completedAt: "desc" } },
       assignments: { include: { shift: true, role: true }, orderBy: { createdAt: "desc" } },
       hoursEntries: true,
       documents: true,
@@ -138,8 +138,23 @@ export default async function PersonPage({
             </ul>
           </div>
           <div className="border border-[#d7d0c2] bg-white p-5">
-            <h2 className="text-lg">Training flags</h2>
-            <div className="mt-3">
+            <h2 className="text-lg">Training credentials</h2>
+            {volunteer.trainings.filter((t) => t.roleSlug.startsWith("training_") || t.roleSlug === "organizing_intensive").length > 0 ? (
+              <div className="mt-3 space-y-2 border-b border-[#eeeae0] pb-3">
+                {volunteer.trainings
+                  .filter((t) => t.roleSlug.startsWith("training_") || t.roleSlug === "organizing_intensive")
+                  .map((t) => (
+                    <div key={t.id} className="flex items-center justify-between text-sm">
+                      <span className="font-semibold">{t.role.title}</span>
+                      <span className="text-xs font-semibold text-[#2e7d4f]">✓ {formatInZone(t.completedAt).split(" · ")[0]}</span>
+                    </div>
+                  ))}
+              </div>
+            ) : (
+              <p className="mt-2 text-xs text-[#5c574c]">No curriculum modules completed yet.</p>
+            )}
+            <h3 className="mt-4 text-xs font-semibold uppercase tracking-wider text-[#5c574c]">Role flags</h3>
+            <div className="mt-2">
               <TrainingForm
                 volunteerId={volunteer.id}
                 trained={volunteer.trainings.map((t) => t.roleSlug)}

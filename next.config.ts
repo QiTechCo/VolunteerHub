@@ -102,7 +102,18 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/training",
-        destination: "/volunteer/training",
+        destination: "/training/index.html",
+        permanent: false,
+      },
+      {
+        source: "/training",
+        destination: "/volunteer/training/index.html",
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: "/volunteer/volunteer/:path*",
+        destination: "/volunteer/:path*",
         permanent: false,
         basePath: false,
       },

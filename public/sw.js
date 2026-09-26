@@ -1,5 +1,5 @@
 const BASE = "/volunteer";
-const CACHE = "vh-hub-v3";
+const CACHE = "vh-hub-v4";
 const PRECACHE = [
   `${BASE}/offline.html`,
   `${BASE}/icons/icon-192.png`,
@@ -80,7 +80,9 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  if (url.hostname === "localhost" || url.hostname === "127.0.0.1") return;
   if (isApi(url)) return;
+  if (url.pathname.endsWith(".mp4") || url.pathname.includes("/videos/")) return;
 
   event.respondWith(handleFetch(request, url));
 });

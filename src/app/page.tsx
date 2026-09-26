@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { RoleHelpCards } from "@/components/role-help-cards";
-import { CAMPAIGN_HOME } from "@/lib/constants";
 import { prisma } from "@/lib/db";
 
 export default async function HubHomePage() {
@@ -20,14 +19,6 @@ export default async function HubHomePage() {
             <p className="mt-5 max-w-xl">
               A single, passionate volunteer can help more than the world&apos;s largest
               check. You can really make a difference.
-            </p>
-            <p className="mt-4 max-w-xl text-[#5c574c]">
-              This is the campaign&apos;s shift desk: register, pick a role, and take a
-              published shift. Donation and voter-registration tools stay on the{" "}
-              <a href={CAMPAIGN_HOME} className="underline">
-                campaign home
-              </a>
-              .
             </p>
             <div className="mt-8 flex flex-col gap-3 min-[641px]:flex-row">
               <Link
@@ -56,10 +47,10 @@ export default async function HubHomePage() {
           <div className="border border-[#d7d0c2] bg-white p-6">
             <p className="hub-kicker">How to volunteer</p>
             <ol className="mt-4 list-decimal space-y-3 pl-5">
-              <li>Create an on-domain account with your name, email, and a password.</li>
-              <li>Add availability and role preferences on your profile.</li>
-              <li>Sign up for a published shift. If a role is full, you join the waitlist.</li>
-              <li>Hours post after staff confirm attendance.</li>
+              <li>Create your volunteer account with your name, email, and a password.</li>
+              <li>Complete the training modules and choose your preferred roles.</li>
+              <li>Sign up for an upcoming shift on the shift board.</li>
+              <li>Log and track your confirmed service hours on your dashboard.</li>
             </ol>
           </div>
         </div>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#3c50a0"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Volunteer Training">
+<title>Module 1: People · Dimple Ajmera Volunteer Training</title>
+<meta name="description" content="Who am I, who are my people, and how do I build public relationships rooted in shared interest? This module covers public narrative, one-on-one conversations, listening, and building a base of supporters.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=League+Spartan:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>(function(){try{var t=JSON.parse(localStorage.getItem("dafm:theme"));if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>:root{
+  --bg:#f7f3ea; --surface:#ffffff; --surface-2:#efe8d8; --ink:#222222; --muted:#5c574c; --line:#d7d0c2;
+  --brand:#1e3a6e; --brand-ink:#ffffff; --brand-soft:#e7ecf5; --accent:#b11a2b; --accent-ink:#ffffff; --accent-soft:#fdeeee;
+  --good:#2e7d4f; --good-soft:#e6f3ea; --bad:#b11a2b; --bad-soft:#fbeae8;
+  --radius:0px; --shadow:none;
+  --display:"League Spartan",system-ui,sans-serif;
+  --sans:"League Spartan",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"EB Garamond",Garamond,Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121317; --surface:#1b1c22; --surface-2:#24252c; --ink:#ececec; --muted:#a6a6ad; --line:#34353d;
+  --brand:#95a5ee; --brand-ink:#10131f; --brand-soft:#1f2542; --accent:#ff6d71; --accent-ink:#1a0506; --accent-soft:#3b1d1f;
+  --good:#6cc28e; --good-soft:#1b3326; --bad:#ff8a7a; --bad-soft:#3a211c; --shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#121317; --surface:#1b1c22; --surface-2:#24252c; --ink:#ececec; --muted:#a6a6ad; --line:#34353d;
+  --brand:#95a5ee; --brand-ink:#10131f; --brand-soft:#1f2542; --accent:#ff6d71; --accent-ink:#1a0506; --accent-soft:#3b1d1f;
+  --good:#6cc28e; --good-soft:#1b3326; --bad:#ff8a7a; --bad-soft:#3a211c; --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 var(--serif);-webkit-font-smoothing:antialiased}
+button,input,select,textarea,label,summary,table,.btn,.tag,.pill,.toc,.topbar,.hero .meta,.foot,.quiz,.sorter,.tablist,.complete-row,.vchip,.video .cap,.score,.matrix,.mm-secs,.mm-mods,.guided,.chooser .pill-row,.saved,figcaption,.src{font-family:var(--sans)}
+a{color:var(--brand)}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.2;margin:0 0 .5em;font-weight:700}
+h1,h2{text-transform:uppercase;letter-spacing:.09em}
+h3{letter-spacing:.02em}
+h1{font-size:clamp(1.8rem,4vw,2.6rem)} h2{font-size:clamp(1.3rem,2.6vw,1.75rem)} h3{font-size:1.25rem} h4{font-size:1.05rem}
+p{margin:0 0 1em} ul,ol{margin:0 0 1em;padding-left:1.3em} li{margin:.25em 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line);box-shadow:none}
+.topbar .in{max-width:1240px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.topbar .mark{color:var(--brand)!important;font-family:var(--display);font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;color:inherit;white-space:nowrap}
+.topbar .mark small{display:block;font-family:var(--sans);font-weight:500;font-size:.72rem;opacity:.85;letter-spacing:.06em;text-transform:uppercase}
+.topbar .grow{flex:1}
+.topbar .pbar{width:min(260px,34vw);height:6px;background:var(--line);border-radius:0;overflow:hidden}
+.topbar .pbar i{display:block;height:100%;width:0;background:var(--accent);transition:width .4s}
+.topbar .pct{font-size:.8rem;font-weight:600;min-width:3.2em;text-align:right}
+.topbar .navlinks{display:flex;gap:6px}
+.topbar .navlinks a{color:inherit;text-decoration:none;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:6px 10px;border-bottom:2px solid transparent}
+.topbar .navlinks a:hover,.topbar .navlinks a[aria-current]{border-bottom-color:var(--accent);color:var(--brand)}
+@media (max-width:760px){.topbar .navlinks{display:none}.topbar .pbar{width:24vw}}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#132448 0%,#1e3a6e 100%);border-bottom:4px solid var(--accent);color:#fff;padding:56px 16px 64px;position:relative;overflow:hidden}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:linear-gradient(135deg,#1c2350,#27336a)}}
+:root[data-theme="dark"] .hero{background:linear-gradient(135deg,#1c2350,#27336a)}
+.hero .in{max-width:1000px;margin:0 auto;position:relative}
+.hero .eyebrow{display:inline-block;background:var(--accent);color:#fff;font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;border-radius:0;margin-bottom:14px}
+.hero p.lede{font-size:1.2rem;max-width:720px;opacity:.95}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px;font-size:.9rem;opacity:.9}
+.hero::after{content:"";position:absolute;right:-80px;top:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%)}
+
+/* layout */
+.layout{max-width:1240px;margin:0 auto;padding:28px 16px 80px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:36px}
+@media (max-width:980px){.layout{grid-template-columns:1fr}.toc{position:static!important;max-height:none!important}}
+.toc{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.toc h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:4px 6px 10px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.toc li{margin:0}
+.toc a{display:flex;gap:10px;align-items:flex-start;padding:7px 8px;border-radius:4px;text-decoration:none;color:var(--ink);font-size:.9rem;line-height:1.35}
+.toc a:hover{background:var(--surface-2)}
+.toc a.active{background:var(--brand-soft);color:var(--brand);font-weight:600}
+.toc .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:.7rem;font-weight:700;color:var(--muted);margin-top:1px}
+.toc a.done .dot{background:var(--good);border-color:var(--good);color:#fff}
+@media (max-width:980px){.toc details:not([open]) ol{display:none}}
+
+main{min-width:0}
+.lesson{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,4vw,40px);margin-bottom:28px;box-shadow:var(--shadow)}
+.lesson>header{border-bottom:1px solid var(--line);margin-bottom:22px;padding-bottom:14px}
+.lesson .num{font:700 .75rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.lesson .time{font-size:.82rem;color:var(--muted);margin-left:8px}
+.lead{font-size:1.1rem;color:var(--ink)}
+.muted{color:var(--muted)}
+.src{font-size:.8rem;color:var(--muted);font-style:italic;margin-top:10px}
+
+/* callouts */
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);padding:14px 18px;border-radius:0 12px 12px 0;margin:18px 0}
+.callout.accent{border-color:var(--accent);background:var(--accent-soft)}
+.callout.good{border-color:var(--good);background:var(--good-soft)}
+.callout h4{margin-bottom:.3em}
+.callout>:last-child{margin-bottom:0}
+.campaign{border:2px solid var(--brand);border-radius:var(--radius);padding:16px 20px;margin:22px 0;position:relative;background:var(--surface)}
+.campaign::before{content:"On the Ajmera campaign";position:absolute;top:-11px;left:14px;background:var(--accent);color:var(--accent-ink);font:700 .7rem var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:2px}
+.campaign>:last-child{margin-bottom:0}
+blockquote{margin:22px 0;padding:6px 0 6px 22px;border-left:4px solid var(--accent);font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.45}
+blockquote cite{display:block;font:500 .85rem var(--sans);color:var(--muted);margin-top:6px;font-style:normal}
+
+/* grids and cards */
+.grid{display:grid;gap:14px;margin:16px 0}
+.g2{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.card{background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:16px}
+.card h4{margin-bottom:.35em}
+.card>:last-child{margin-bottom:0}
+.tag{display:inline-block;font:700 .68rem var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--brand-soft);color:var(--brand);margin-bottom:6px}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps>li{counter-increment:s;position:relative;padding:4px 0 10px 46px;margin:0}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700;font-size:.9rem}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.93rem}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:650}
+.tablewrap{overflow-x:auto}
+
+/* flip cards */
+.flip{perspective:900px;min-height:170px;cursor:pointer;background:none;border:0;padding:0;text-align:left;color:inherit;width:100%}
+.flip .fi{position:relative;width:100%;height:100%;min-height:170px;transition:transform .5s;transform-style:preserve-3d}
+.flip.on .fi{transform:rotateY(180deg)}
+.flip .ff,.flip .fb{position:absolute;inset:0;backface-visibility:hidden;border-radius:4px;padding:16px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line)}
+.flip .ff{background:var(--brand);color:var(--brand-ink)}
+.flip .ff h4{font-size:1.15rem;margin:0}
+.flip .ff small{opacity:.8;margin-top:8px;font-size:.75rem}
+.flip .fb{background:var(--surface-2);transform:rotateY(180deg);font-size:.9rem;overflow:auto}
+@media (prefers-reduced-motion:reduce){.flip .fi{transition:none}}
+
+/* tabs */
+.tabs{margin:18px 0}
+.tablist{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--line);margin-bottom:14px}
+.tablist button{border:0;background:none;padding:9px 14px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px}
+.tablist button[aria-selected="true"]{color:var(--brand);border-color:var(--accent)}
+.tabpanel[hidden]{display:none}
+
+/* accordions */
+details.acc{border:1px solid var(--line);border-radius:4px;margin:10px 0;background:var(--surface)}
+details.acc>summary{cursor:pointer;padding:13px 16px;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--accent)}
+details.acc[open]>summary::after{content:"–"}
+details.acc>div{padding:0 16px 14px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:2px;padding:11px 18px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;background:var(--brand);color:var(--brand-ink);text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+.btn.accent{background:var(--accent);color:var(--accent-ink)}
+.btn.small{padding:6px 12px;font-size:.85rem}
+.complete-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px dashed var(--line)}
+.complete-row .btn.done{background:var(--good);color:#fff}
+
+/* quiz */
+.quiz .q{border:1px solid var(--line);border-radius:4px;padding:16px;margin:14px 0;background:var(--surface)}
+.quiz .q p.stem{font-weight:650;margin-bottom:10px}
+.quiz .opts{display:grid;gap:8px}
+.quiz .opts button{text-align:left;border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:4px;padding:10px 14px}
+.quiz .opts button:hover:not(:disabled){border-color:var(--brand)}
+.quiz .opts button.right{border-color:var(--good);background:var(--good-soft)}
+.quiz .opts button.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.quiz .opts button:disabled{cursor:default}
+.quiz .fb{margin-top:10px;font-size:.92rem;display:none}
+.quiz .fb.show{display:block}
+.score{font-weight:700;font-size:1.1rem;padding:14px 18px;border-radius:4px;background:var(--brand-soft);margin-top:16px}
+
+/* sorter */
+.sorter .item{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:space-between;border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:8px 0;background:var(--surface)}
+.sorter .item .txt{flex:1 1 260px}
+.sorter .item .choices{display:flex;flex-wrap:wrap;gap:6px}
+.sorter .item .choices button{border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:99px;padding:5px 12px;font-size:.82rem;font-weight:600}
+.sorter .item.ok{border-color:var(--good);background:var(--good-soft)}
+.sorter .item.no{border-color:var(--bad);background:var(--bad-soft)}
+.sorter .item .why{flex-basis:100%;font-size:.85rem;color:var(--muted);display:none}
+.sorter .item.ok .why,.sorter .item.no .why{display:block}
+
+/* worksheets */
+.worksheet{background:var(--surface-2);border:1px dashed var(--muted);border-radius:var(--radius);padding:18px;margin:20px 0}
+.worksheet>h4::before{content:"✎ ";color:var(--accent)}
+.worksheet label{display:block;font-weight:600;font-size:.9rem;margin:12px 0 4px}
+.worksheet label .hint{font-weight:400;color:var(--muted);display:block;font-size:.82rem}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:4px;padding:9px 11px}
+textarea{min-height:78px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--brand);outline:none}
+.saved{font-size:.75rem;color:var(--good);opacity:0;transition:opacity .3s;margin-left:6px}
+.saved.show{opacity:1}
+.wgrid{display:grid;grid-template-columns:110px repeat(3,minmax(140px,1fr));gap:8px;align-items:stretch}
+.wgrid .h{font-weight:700;font-size:.85rem;padding:6px}
+.wgrid textarea{min-height:70px;font-size:.9rem}
+@media (max-width:700px){.wgrid{grid-template-columns:1fr}.wgrid .h.blank{display:none}}
+
+/* misc interactive */
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.pill{border:1.5px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 13px;font-size:.88rem;color:var(--ink)}
+.pill[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.reveal-box{border:1px solid var(--line);border-radius:4px;padding:14px 16px;background:var(--surface);min-height:60px;margin-top:10px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.compare{grid-template-columns:1fr}}
+.bad-ex{border-left:4px solid var(--bad);background:var(--bad-soft);padding:10px 14px;border-radius:0 10px 10px 0}
+.good-ex{border-left:4px solid var(--good);background:var(--good-soft);padding:10px 14px;border-radius:0 10px 10px 0}
+.fig{margin:20px 0;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+.meter{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.matrix .cell{border-radius:4px;padding:14px;border:1px solid var(--line);min-height:120px}
+.matrix .cell h4{font-family:var(--sans);font-size:.9rem;margin-bottom:4px}
+.matrix .cell ul{font-size:.85rem;margin:0;padding-left:1.1em}
+.c-do{background:var(--bad-soft)} .c-plan{background:var(--good-soft)} .c-del{background:var(--accent-soft)} .c-drop{background:var(--surface-2)}
+.bio{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+@media (max-width:760px){.bio{grid-template-columns:1fr}}
+.timeline{list-style:none;padding:0;margin:0;border-left:3px solid var(--accent);padding-left:18px}
+.timeline li{position:relative;margin:0 0 14px}
+.timeline li::before{content:"";position:absolute;left:-26px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.timeline b{display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.stat{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--brand);line-height:1}
+.guided{text-align:center;padding:22px;border-radius:var(--radius);background:var(--brand-soft)}
+.guided .gstep{font-family:var(--serif);font-size:1.3rem;min-height:3.2em;display:flex;align-items:center;justify-content:center}
+.breath{width:90px;height:90px;border-radius:50%;background:var(--accent);margin:14px auto;opacity:.8;transform:scale(.6);transition:transform 4s ease-in-out}
+.breath.in{transform:scale(1)}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:26px 16px 40px;text-align:center;font-size:.82rem;color:var(--muted)}
+.foot .paid{display:inline-block;border:1px solid var(--muted);padding:6px 12px;margin-top:10px;font-weight:600}
+.nextmod{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px}
+.certificate{border:3px double var(--accent);border-radius:var(--radius);padding:28px;text-align:center;background:var(--surface);margin-top:18px}
+.certificate h3{font-size:1.6rem}
+@media print{.topbar,.toc,.complete-row,.btn,.foot .nextmod{display:none!important}.layout{display:block}.lesson{break-inside:avoid-page;box-shadow:none}.flip .fb{position:static;transform:none}.flip .ff{display:none}}
+.toc summary.mob{display:none}
+@media (max-width:980px){.toc summary.mob{display:flex;justify-content:space-between;cursor:pointer;font-weight:650;padding:4px 6px;list-style:none}.toc summary.mob::after{content:"+";color:var(--accent)}.toc details[open] summary.mob::after{content:"–"}.toc h4{display:none}}
+
+/* ---------- video-first ---------- */
+.video{margin:4px 0 22px}
+.video .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:#1a2250;box-shadow:var(--shadow)}
+.video .frame iframe,.video .frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;color:#fff;background:radial-gradient(circle at 30% 20%,#4a5fb4 0%,#3c50a0 45%,#232f63 100%)}
+.video .ph .play{width:68px;height:68px;border-radius:50%;background:#d8262c;display:grid;place-items:center;margin-bottom:14px;box-shadow:0 0 0 10px rgba(216,38,44,.25)}
+.video .ph .play::after{content:"";border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.video .ph h4{font-size:clamp(1.05rem,2.6vw,1.45rem);margin:0 0 6px;color:#fff}
+.video .ph p{font-size:.85rem;opacity:.85;margin:0;max-width:520px}
+.video .ph .soon{margin-top:12px;font:700 .7rem var(--sans);letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:99px}
+.video .cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin-top:8px}
+.video .cap b{color:var(--ink)}
+.vchip{display:inline-block;font-size:.82rem;font-weight:600;text-decoration:none;background:var(--brand-soft);color:var(--brand);padding:6px 12px;border-radius:99px;margin:0 0 16px}
+.takeaways{background:var(--brand-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:16px 20px 8px;margin:0 0 16px}
+.takeaways h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .takeaways h3{color:var(--accent)}}
+.takeaways ul{list-style:none;padding:0;margin:0 0 8px}
+.takeaways li{position:relative;padding-left:26px;margin:0 0 9px;font-size:1.02rem}
+.takeaways li::before{content:"✓";position:absolute;left:0;top:0;color:var(--brand);font-weight:800}
+details.fulllesson{background:var(--surface-2)}
+details.fulllesson>summary{color:var(--brand)}
+details.fulllesson[open]>div{padding-top:6px}
+.practice-h{margin-top:26px;font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+@media print{.video{display:none}details.fulllesson>div{display:block!important}}
+
+/* ================= MOBILE ================= */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{padding-bottom:env(safe-area-inset-bottom)}
+.topbar .in{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+.menubtn{display:none;flex:none;width:44px;height:44px;border:1px solid var(--line);border-radius:4px;background:var(--surface-2);flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.menubtn span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.menubtn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menubtn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menubtn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobmenu{background:var(--surface);color:var(--ink);border-bottom:1px solid var(--line);max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);overflow:auto;padding:10px 16px 16px;box-shadow:0 12px 24px rgba(0,0,0,.18)}
+.mobmenu[hidden]{display:none}
+.mm-mods{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.mm-mods a{display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:4px;border:1.5px solid var(--line);text-decoration:none;color:var(--ink);font-weight:650;font-size:.92rem;text-align:center;padding:6px}
+.mm-mods a[aria-current]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.mm-secs h4{font:700 .72rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:8px 2px}
+.mm-secs a{display:flex;gap:10px;align-items:center;min-height:44px;padding:6px 8px;border-radius:4px;text-decoration:none;color:var(--ink);font-size:.95rem}
+.mm-secs a .dot{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--muted)}
+.mm-secs a.done .dot{background:var(--good);border-color:var(--good);color:#fff}
+
+/* flip cards size to their content (no clipping) */
+.flip .fi{display:grid;min-height:170px}
+.flip .ff,.flip .fb{position:relative;inset:auto;grid-area:1/1}
+
+@media (max-width:760px){
+  .menubtn{display:flex}
+  .topbar .in{padding-top:8px;padding-bottom:8px;gap:10px}
+  .topbar .mark{font-size:.98rem}
+  .topbar .pbar{width:auto;flex:1;max-width:120px}
+  .topbar .grow{flex:0 0 0}
+  .topbar .mark{flex:1}
+  html{scroll-padding-top:72px}
+  .hero{padding:32px 16px 38px}
+  .hero p.lede{font-size:1.02rem}
+  .hero .meta{font-size:.82rem;gap:6px 14px}
+  .layout{padding:16px 12px 60px;gap:16px}
+  .lesson{padding:20px 16px;border-radius:4px;margin-bottom:18px}
+  .lesson>header{margin-bottom:16px}
+  h2{font-size:1.45rem}
+  blockquote{font-size:1.08rem;padding-left:14px}
+  .campaign{padding:16px 14px}
+  .callout{padding:12px 14px}
+  .takeaways{padding:14px 14px 6px}
+  .takeaways li{font-size:.98rem}
+  .worksheet{padding:14px 12px}
+  /* bigger touch targets */
+  .btn{min-height:44px}
+  .btn.small{min-height:44px;padding:8px 14px}
+  .complete-row{flex-direction:column;align-items:stretch}
+  .complete-row .btn{justify-content:center;text-align:center}
+  .sorter .item .choices{width:100%}
+  .sorter .item .choices button{min-height:40px;padding:8px 14px;font-size:.88rem;flex:1 1 auto}
+  .pill{min-height:44px;padding:8px 14px}
+  .tablist{gap:4px 2px}
+  .tablist button{min-height:44px;padding:8px 10px;font-size:.9rem}
+  details.acc>summary{min-height:48px;align-items:center}
+  .toc summary.mob{min-height:44px;align-items:center}
+  .toc .btn{width:100%;justify-content:center}
+  .quiz .opts button{min-height:48px;padding:12px 14px}
+  .vchip{padding:10px 14px}
+  /* stop iOS zoom-on-focus: inputs must be >= 16px */
+  input,textarea,select{font-size:16px!important}
+  input[type=checkbox]{width:28px!important;height:28px!important}
+  input[type=range]{height:44px}
+  #workload th[style]{width:auto!important}
+  #workload table input{min-width:0!important;width:70px}
+  .cbx{display:inline-grid;place-items:center;min-width:44px;min-height:44px;cursor:pointer}
+  /* worksheet grid → stacked with placeholders */
+  .wgrid .h:nth-child(-n+4){display:none}
+  .wgrid .h{padding:10px 0 0;font-size:.95rem}
+  /* tables */
+  table{font-size:.86rem}
+  th,td{padding:8px 6px}
+  #score-table td:first-child{min-width:0}
+  #workload table input{min-width:64px}
+  .tablewrap{position:relative}
+  .tablewrap.scrolls::after{content:"swipe →";position:sticky;left:100%;display:block;width:max-content;font-size:.72rem;color:var(--muted);padding:2px 4px}
+  .matrix{gap:8px}
+  .matrix .cell{padding:10px;min-height:100px}
+  .guided .gstep{font-size:1.1rem}
+  .certificate{padding:20px 14px}
+  .video{margin-bottom:16px}
+  .video .ph .play{width:54px;height:54px}
+  .video .ph p{display:none}
+  .video .cap span:last-child{display:none}
+  .foot{padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+}
+@media (max-width:380px){
+  .topbar .mark small{display:none}
+  .mm-mods{grid-template-columns:1fr}
+}
+@media (hover:none){ .btn:hover{filter:none} }
+.flip .fb{display:block}
+.flip .fb::before{content:"";display:block}
+@media (max-width:760px){
+  .grid:has(> .flip){grid-template-columns:1fr 1fr;gap:10px}
+  .flip .fi{min-height:130px}
+  .flip .ff,.flip .fb{padding:12px}
+  .flip .ff h4{font-size:1rem}
+  .flip .fb{font-size:.84rem;line-height:1.45}
+}
+@media (max-width:340px){ .grid:has(> .flip){grid-template-columns:1fr} }
+#score-table .s0,#score-table .s1,#score-table .s2{white-space:nowrap;font-size:.8rem}
+
+/* completion gate */
+.complete-row .gate{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.complete-row .btn.locked{background:var(--line);color:var(--muted, #666);cursor:not-allowed;filter:none}
+.complete-row .gate-hint{margin:0;font-size:.9rem;color:var(--muted, #666)}
+.complete-row .gate-hint[hidden]{display:none}
+[data-k].needs{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:760px){.complete-row .gate{align-items:stretch}}
+
+/* light / dark switch */
+.themebtn{flex:none;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);color:var(--ink);font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;cursor:pointer}
+.themebtn:hover{border-color:var(--brand)}
+.themebtn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.themebtn svg{width:18px;height:18px;flex:none}
+.mm-theme{display:none}
+@media (max-width:760px){.topbar .in > .themebtn{display:none}.mm-theme{display:block;padding:10px 0 12px;border-bottom:1px solid var(--line);margin-bottom:6px}.mm-theme .themebtn{height:44px}}
+</style></head>
+<body data-module="m1">
+<a class="sr" href="#main">Skip to content</a>
+<header class="topbar"><div class="in"><a href="/volunteer/dashboard" class="hub-brand" title="Return to Volunteer Hub" style="display:flex;align-items:center;text-decoration:none;"><img src="/volunteer/volunteer-hub-logo.jpg" alt="Volunteer Hub" style="height:44px;width:auto;margin-right:12px;border:0;"></a><a class="mark" href="index.html">Dimple Ajmera<small>Volunteer Training</small></a><nav class="navlinks" aria-label="Modules"><a href="index.html">Training Home</a><a href="module-1-people.html" aria-current=page>1 · People</a><a href="module-2-power.html">2 · Power</a><a href="module-3-purpose.html">3 · Purpose</a></nav><span class="grow"></span><a href="/volunteer/dashboard" class="btn small" style="background:#222;color:#fff;border-radius:0;text-decoration:none;font-weight:700;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;margin-right:6px;">← Hub</a><div class="pbar" aria-hidden="true"><i></i></div><span class="pct">0%</span><button class="themebtn" type="button" data-themebtn aria-label="Switch to light mode"></button><button class="menubtn" type="button" aria-expanded="false" aria-controls="mobmenu" aria-label="Open menu"><span></span><span></span><span></span></button></div><nav id="mobmenu" class="mobmenu" hidden aria-label="Training menu"><div style="padding:4px 0 10px;border-bottom:1px solid var(--line);margin-bottom:8px;"><a href="/volunteer/dashboard" style="display:flex;align-items:center;justify-content:center;background:#222;color:#fff;text-decoration:none;padding:10px 14px;font-weight:700;font-size:0.82rem;letter-spacing:0.14em;text-transform:uppercase;">← Return to Volunteer Hub</a></div><div class="mm-mods"><a href="index.html">Training Home</a><a href="module-1-people.html" aria-current=page>1 · People</a><a href="module-2-power.html">2 · Power</a><a href="module-3-purpose.html">3 · Purpose</a></div><div class="mm-theme"><button class="themebtn" type="button" data-themebtn aria-label="Switch to light mode"></button></div><div class="mm-secs"></div></nav></header>
+<section class="hero"><div class="in"><span class="eyebrow">Module 1 of 3 · People</span><h1>People: Relationships Are the Campaign</h1><p class="lede">Who am I, who are my people, and how do I build public relationships rooted in shared interest? This module covers public narrative, one-on-one conversations, listening, and building a base of supporters.</p><div class="meta"><span>• 8 short videos</span><span>• 9 sections</span><span>• Worksheets, activities + knowledge check</span></div></div></section>
+<div class="layout"><aside class="toc" aria-label="Module sections"><details open><summary class="mob">Sections in this module</summary><h4>In this module</h4><ol></ol></details>
+<div style="margin-top:14px;display:grid;gap:8px"><button class="btn small ghost" data-download type="button">⬇ Download my worksheet answers</button><button class="btn small ghost" data-print type="button">🖨 Print this module</button></div></aside>
+<main id="main"><script>
+/* ====================================================================
+   PASTE VIDEO LINKS HERE — one video per lesson section.
+   Paste a YouTube, Google Drive, Vimeo or .mp4 link between the quotes,
+   or use { src: "videos/file.mp4", poster: "videos/file.jpg" } for self-hosted files.
+   Leave a link empty ("") to show a "video coming soon" placeholder.
+   ==================================================================== */
+window.DAFM_VIDEOS = {
+    "meet": {"src": "videos/m1-01-meet.mp4", "poster": "videos/m1-01-meet.jpg", "length": "1:25 min"},   // Video 1: Meet Dimple, and why we organize
+    "self-interest": {"src": "videos/m1-02-self-interest.mp4", "poster": "videos/m1-02-self-interest.jpg", "length": "1:12 min"},   // Video 2: Issues, interests & values: understanding self-interest
+    "narrative": {"src": "videos/m1-03-narrative.mp4", "poster": "videos/m1-03-narrative.jpg", "length": "1:21 min"},   // Video 3: Public narrative: Story of Self, Us and Now
+    "one-on-ones": {"src": "videos/m1-04-one-on-ones.mp4", "poster": "videos/m1-04-one-on-ones.jpg", "length": "1:23 min"},   // Video 4: 1:1 organizing conversations
+    "presence": {"src": "videos/m1-05-presence.mp4", "poster": "videos/m1-05-presence.jpg", "length": "1:14 min"},   // Video 5: Listening and compassionate presence
+    "base": {"src": "videos/m1-06-base.mp4", "poster": "videos/m1-06-base.jpg", "length": "1:13 min"},   // Video 6: Base building: constituency, community, base
+    "systems": {"src": "videos/m1-07-systems.mp4", "poster": "videos/m1-07-systems.jpg", "length": "1:16 min"},   // Video 7: Understanding barriers and equity
+    "practice": {"src": "videos/m1-08-practice.mp4", "poster": "videos/m1-08-practice.jpg", "length": "1:07 min"},   // Video 8: Put it into practice: a door conversation
+};
+</script>
+<!-- ============ 1. MEET DIMPLE ============ -->
+<section class="lesson" data-title="Meet Dimple &amp; why we organize" id="meet"><header><span class="num">Section 1</span><span class="time">· 8 min</span><h2>Meet Dimple, and why we organize</h2></header><div class="video" data-n="1" data-title="Meet Dimple, and why we organize" data-topics="" data-video="meet"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li><b>Dimple Ajmera</b> is a Democrat running for Charlotte City Council At-Large: a working mother, CPA and Council member since 2017.</li><li>Her story: came to the U.S. at 16, worked her way through USC, and left finance for public service after losing her father.</li><li>Her four priorities: <b>safety</b> in every zip code, <b>sustainable infrastructure</b>, <b>affordable housing</b>, <b>economic opportunity</b>.</li><li><b>Organizing</b> means combining what each of us has into the shared power to win a common goal.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">Before you knock a door or make a call, you should be able to talk about the candidate with confidence and explain why your time on this campaign matters.</p><div class="bio">
+<div>
+<h3>Dimple Ajmera</h3>
+<p><b>Democrat for Charlotte City Council, At-Large.</b> The campaign describes her as a <em>working mother, accountant and fighter</em>.</p>
+<p>Dimple came to the United States at age 16, speaking limited English. She graduated from Southern High School in Durham and the University of Southern California, and became a Certified Public Accountant. She has said she went <em>“from cleaning hotel rooms to pay for college to managing multi-million dollar budgets,”</em> including award-winning work at TIAA.</p>
+<p>When her father died unexpectedly at 55, she left her finance career for public service. She has served on Charlotte City Council since 2017. The City lists her as the first Asian American and youngest woman elected to the Council.</p>
+<ul class="timeline" style="margin-top:18px">
+<li><b>Age 16</b>Immigrates to the U.S. and starts at Southern High School, Durham</li>
+<li><b>College</b>Works to pay her way through USC; becomes a CPA</li>
+<li><b>Finance career</b>Manages multimillion-dollar budgets, including at TIAA</li>
+<li><b>Turning point</b>Her father’s sudden death at 55 leads her to public service</li>
+<li><b>2017 – today</b>Charlotte City Council; chairs the City’s Budget Committee and serves on the Housing &amp; Community Safety Committee (per the campaign site)</li>
+</ul>
+</div>
+<div>
+<div class="card" style="margin-bottom:12px"><span class="tag">Her four priorities</span>
+<ol style="margin:0">
+<li>Build a <b>safe Charlotte</b>, whatever your zip code</li>
+<li>Champion <b>sustainable infrastructure</b> and a resilient future</li>
+<li>Expand access to <b>affordable housing</b></li>
+<li>Create <b>economic opportunity</b> across the city</li>
+</ol></div>
+<div class="card" style="margin-bottom:12px"><span class="tag">Record to know</span>
+<ul style="margin:0;font-size:.93rem">
+<li>Won affordable healthcare for thousands of city employees</li>
+<li>After CMPD Officer Joshua Eyer was killed in 2024, extended city healthcare coverage to families of officers killed in the line of duty</li>
+<li>Championed $100 million in affordable housing bonds</li>
+<li>Supported the SAFE Charlotte initiative, the Strategic Energy Action Plan, HIRE Charlotte and the Eastland redevelopment</li>
+</ul></div>
+<div class="card"><span class="tag">Endorsements &amp; honors</span>
+<p style="font-size:.93rem;margin:0">Endorsed by <b>The Charlotte Observer</b> and, twice, the <b>Charlotte-Mecklenburg Fraternal Order of Police</b>. Honors include Rotary International’s Global Service Award (2018), Clean Air Carolina’s Blue Sky Award (2019), the NAACP Excellence in Leadership award, Charlotte Business Journal’s 40 Under 40, and recognition among the 50 most influential women in Mecklenburg County.</p></div>
+</div>
+</div><div class="callout accent"><h4>Stick to the facts</h4><p>When you talk about Dimple, use what’s on this page or on <a href="https://www.dimpleajmera.com" rel="noopener" target="_blank">dimpleajmera.com</a>. If a voter asks something you don’t know, say so, write down the question and pass it to your volunteer coordinator. Never guess about a policy position.</p></div><h3>What organizing means</h3><blockquote>“Organizing is when people combine the individual resources they have into the shared power that they need to achieve a common purpose.”</blockquote><p>Organizing is a <b>leadership practice</b>: taking responsibility for helping others reach a shared goal when the outcome is uncertain. Organizers find, recruit and develop leaders, build a group of supporters around them, and turn what those supporters have (time, relationships, skills, votes) into the power to win. It works because it turns <em>voluntary effort based on real commitment</em> into the capacity to make change.</p><p>This program has three modules, one for each part of that definition:</p><div class="grid g3">
+<div class="card"><span class="tag">Module 1</span><h4>People</h4><p>Who am I? Who are my people? How do I build relationships based on shared interest, and find the people we need to win?</p></div>
+<div class="card"><span class="tag">Module 2</span><h4>Power</h4><p>How can I stand more fully in my own power, help others stand in theirs, and understand how decisions get made?</p></div>
+<div class="card"><span class="tag">Module 3</span><h4>Purpose</h4><p>How do we plan and run campaigns that win, build leaders and set us up for long-term progress?</p></div>
+</div></div></details><h3 class="practice-h">🧩 Try it</h3><div class="worksheet"><h4>Reflect: your why</h4>
+<label for="w-why1">Who are the people this campaign organizes?<span class="hint">Neighbors, voters, communities, groups across Charlotte</span></label><textarea data-k="why1" id="w-why1"></textarea>
+<label for="w-why2">What power are we trying to build?</label><textarea data-k="why2" id="w-why2"></textarea>
+<label for="w-why3">For the sake of what purpose?</label><textarea data-k="why3" id="w-why3"></textarea>
+</div></section>
+<!-- ============ 2. ISSUES INTERESTS VALUES ============ -->
+<section class="lesson" data-title="Issues, interests &amp; values" id="self-interest"><header><span class="num">Section 2</span><span class="time">· 6 min</span><h2>Issues, interests &amp; values: understanding self-interest</h2></header><div class="video" data-n="2" data-title="Issues, interests &amp; values: understanding self-interest" data-topics="" data-video="self-interest"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li><b>Self-interest</b> isn’t selfish. It means “self <em>with</em> others,” and it’s the basis of trust.</li><li><b>Issue</b> = the public problem · <b>Interest</b> = your personal stake · <b>Value</b> = the principle underneath.</li><li>Being open about why <em>you</em> are here helps voters and teammates trust you.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">Self-interest isn’t selfishness. It’s the honest answer to “why am I here?”, and it’s where trust starts.</p><div class="grid g3">
+<div class="card"><h4>Selfish</h4><p>Puts <b>self before others</b>.</p></div>
+<div class="card"><h4>Selfless</h4><p>Puts <b>others before self</b>. It’s often praised, but it’s hard to sustain and can hide our real motives.</p></div>
+<div class="card" style="border-color:var(--accent)"><h4>Self-interest</h4><p>Understands <b>self <em>with</em> others</b>. It’s the basis for relationships and acting together.</p></div>
+</div><p>Our culture often motivates people through coercion (“do this or you’re fired”), and activist spaces too often rely on shame or guilt. Lasting action comes from caring about others and about ourselves, and from knowing what drives us: the <b>issues</b> we care about, our personal <b>interests</b> in those issues, and the <b>values</b> underneath.</p><p>Being clear about your self-interest also builds trust. If people can’t tell why you’re involved, they’ll wonder about your motives.</p><blockquote>“If you have come here to help me, you are wasting your time. But if you have come because your liberation is bound up with mine, then let us work together.”<cite>— Lilla Watson</cite></blockquote></div></details><h3 class="practice-h">🧩 Try it</h3><h3>Try it: sort the statements</h3><p class="muted">Read each statement from a volunteer and decide if it names an issue, an interest or a value.</p><div class="sorter" data-cats="Issue|Interest|Value">
+<div class="item" data-cat="Issue"><span class="txt">“Rents in Charlotte are rising faster than wages.”</span><span class="why">An <b>issue</b> is a topic, problem or policy question.</span></div>
+<div class="item" data-cat="Interest"><span class="txt">“My daughter and her kids might have to move out of the city we grew up in.”</span><span class="why">An <b>interest</b> is your personal stake: how the issue affects you.</span></div>
+<div class="item" data-cat="Value"><span class="txt">“Everyone who works hard deserves a safe, stable place to call home.”</span><span class="why">A <b>value</b> is the moral principle behind your position.</span></div>
+<div class="item" data-cat="Issue"><span class="txt">“Some neighborhoods have far fewer sidewalks and streetlights.”</span><span class="why">A public problem is an <b>issue</b>.</span></div>
+<div class="item" data-cat="Interest"><span class="txt">“I walk my son to school along a road with no sidewalk.”</span><span class="why">Personal stake means <b>interest</b>.</span></div>
+<div class="item" data-cat="Value"><span class="txt">“Your safety shouldn’t depend on your zip code.”</span><span class="why">A principle means <b>value</b>.</span></div>
+<p class="sort-score muted" style="margin-top:8px"></p>
+</div><div class="worksheet"><h4>Brainstorm: my motivations for volunteering</h4>
+<label for="w-iss">Issues<span class="hint">What topics, problems and public policy questions do I care about?</span></label><textarea data-k="issues" id="w-iss"></textarea>
+<label for="w-int">Interests<span class="hint">How do these issues affect me? What’s at stake for me personally?</span></label><textarea data-k="interests" id="w-int"></textarea>
+<label for="w-val">Values<span class="hint">What core moral values or principles shape my positions on these issues?</span></label><textarea data-k="values" id="w-val"></textarea>
+</div></section>
+<!-- ============ 3. PUBLIC NARRATIVE ============ -->
+<section class="lesson" data-title="Public narrative: self, us, now" id="narrative"><header><span class="num">Section 3</span><span class="time">· 15 min</span><h2>Public narrative: Story of Self, Us and Now</h2></header><div class="video" data-n="3" data-title="Public narrative: Story of Self, Us and Now" data-topics="" data-video="narrative"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li>Stories move people to act because they carry <b>values through emotion</b>.</li><li>Every story has three parts: <b>Challenge → Choice → Outcome</b>.</li><li><b>Self</b>: why I’m called · <b>Us</b>: why we’re called · <b>Now</b>: why we must act today, ending with a clear, hopeful choice.</li><li>Your values tie the three stories together. Practice, and adapt your story to each audience.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">Facts inform people, but stories move them to act. Public narrative, a framework developed by Marshall Ganz of Harvard University, teaches you to turn your values into action through stories.</p><div class="grid g3">
+<div class="card"><span class="tag">Head</span><h4>Strategy</h4><p><em>How</em> we can act to change things.</p></div>
+<div class="card"><span class="tag">Heart</span><h4>Motivation</h4><p><em>Why</em> we should act. Narrative lives here.</p></div>
+<div class="card"><span class="tag">Hands</span><h4>Action</h4><p>People acting together with purpose.</p></div>
+</div><p><b>Values inspire action through emotion.</b> Emotions tell us what we value in ourselves, in others and in the world. Stories let us share values as lived experience rather than abstract principles, which is why they can move people. We each have stories of challenge (or we wouldn’t think the world needs changing) and stories of hope (or we wouldn’t think we could change it).</p><h3>The structure of every story: Challenge → Choice → Outcome</h3><figure class="fig"><svg aria-label="Challenge leads to Choice leads to Outcome, which teaches a moral" role="img" viewbox="0 0 720 150">
+<defs><marker id="ar" markerheight="7" markerwidth="7" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M0,0L10,5L0,10z" fill="currentColor"></path></marker></defs>
+<g font-family="Figtree,sans-serif" style="color:var(--muted)" text-anchor="middle">
+<rect fill="var(--brand)" height="80" rx="14" width="190" x="10" y="30"></rect><text fill="var(--brand-ink)" font-size="20" font-weight="700" x="105" y="66">Challenge</text><text fill="var(--brand-ink)" font-size="12" x="105" y="90">an unexpected obstacle</text>
+<line marker-end="url(#ar)" stroke="currentColor" stroke-width="3" x1="205" x2="258" y1="70" y2="70"></line>
+<rect fill="var(--accent)" height="80" rx="14" width="190" x="265" y="30"></rect><text fill="var(--accent-ink)" font-size="20" font-weight="700" x="360" y="66">Choice</text><text fill="var(--accent-ink)" font-size="12" x="360" y="90">what the character does</text>
+<line marker-end="url(#ar)" stroke="currentColor" stroke-width="3" x1="460" x2="513" y1="70" y2="70"></line>
+<rect fill="var(--good)" height="80" rx="14" width="190" x="520" y="30"></rect><text fill="#fff" font-size="20" font-weight="700" x="615" y="66">Outcome</text><text fill="#fff" font-size="12" x="615" y="90">and the lesson it teaches</text>
+<text fill="currentColor" font-size="13" x="360" y="140">Listeners identify with the character, so they don’t just hear about courage, they feel it.</text>
+</g></svg></figure><div class="tabs">
+<div class="tablist"><button data-tab="t-self">Story of Self</button><button data-tab="t-us">Story of Us</button><button data-tab="t-now">Story of Now</button><button data-tab="t-link">Linking them</button></div>
+<div class="tabpanel" id="t-self">
+<h3>Story of Self: why <em>I</em> am called</h3>
+<p>Tell a story of self to share the values that called <em>you</em> to act. Without it, people will guess at your motives, often wrongly. Focus on <b>choice points</b>: moments when your values shaped a decision. When did you first care about being heard? When did you first see injustice? When did you feel you had to act, and why did you believe you could? Include sensory detail (the place, the sounds, what it looked like). Share the moments that shaped your public life, not your deepest private secrets.</p>
+<div class="compare">
+<div class="card"><h4>Questions to dig deeper</h4>
+<p><b>Challenge:</b> Why was it a challenge? Why was it <em>yours</em>?</p>
+<p><b>Choice:</b> Why did you choose what you did? Where did the courage or hope come from? Did family stories teach you how to act?</p>
+<p><b>Outcome:</b> How did it feel? What did it teach you? What do you want to teach us?</p></div>
+<div class="card"><h4>Where stories hide</h4>
+<p><b>Family &amp; childhood:</b> parents, growing up, community, role models, school</p>
+<p><b>Life choices:</b> school, career, family, passions, overcoming challenges</p>
+<p><b>Organizing experience:</b> first time organizing, first election win, key people</p></div>
+</div>
+<div class="callout"><p><b>A challenge doesn’t have to be a misfortune.</b> It can be a mountain you chose to climb just as much as a valley you climbed out of. And <b>you</b> are the main character, not a friend or relative.</p></div>
+<div class="campaign"><h4>Example: how Dimple’s public story fits the structure</h4>
+<p><b>Challenge:</b> Arriving in America at 16 with a language barrier, then working through college, including cleaning hotel rooms. Later, the sudden loss of her father at 55.<br/>
+<b>Choice:</b> She kept going, became a CPA, and after her father’s death left a successful finance career for public service.<br/>
+<b>Outcome:</b> Today she uses that budget experience on City Council. The values it shows are hard work, resilience and service.</p>
+<p class="muted" style="margin:0">You can use this outline when voters ask “Who is she?” Then tell your own story of why <em>you</em> support her.</p></div>
+</div>
+<div class="tabpanel" id="t-us">
+<h3>Story of Us: why <em>we</em> are called</h3>
+<p>In a story of us, the character is the group you’re asking to act. Shared stories express the identity and values of communities: family, faith, neighborhood, and new ones like this campaign. Focus on a <b>specific story about specific people at a specific time</b> that reminds everyone of the values you share. It takes the courage of empathy: imagining others’ experience well enough to put it into words.</p>
+<ul>
+<li><b>Challenge:</b> what your community has faced or faces now. Make it real with images and details, not statistics.</li>
+<li><b>Choice:</b> moments when the community met a challenge with action. These are a source of hope.</li>
+<li><b>Outcome (hope):</b> vivid reminders of what you’ve achieved together.</li>
+</ul>
+<p>The goal is to help people see themselves as a community and believe they can make a difference.</p>
+</div>
+<div class="tabpanel" id="t-now">
+<h3>Story of Now: why we must act <em>now</em></h3>
+<p>A story of now names an urgent challenge the “us” faces, paints a <b>nightmare</b> (what happens if we don’t act) and a <b>dream</b> (what’s possible if we do), and ends with a <b>specific, hopeful choice</b> each listener can make right now. It connects story (why we should act) with strategy (how we can act). It takes the courage of imagination: naming the pain and the possibility.</p>
+<div class="callout accent"><p>Leaders who only describe problems aren’t much help. If you’ve made people feel the urgency, you owe them a way to act that could work. A story of now is a call to <b>hopeful action</b>.</p></div>
+<div class="campaign"><p><b>Story of now on the doors:</b> “Our next city election will decide who shapes Charlotte’s budget, housing and public safety. If people like us stay home, those decisions get made without us. Dimple has a record of delivering. Can we count on your vote, and will you tell three neighbors?”</p></div>
+</div>
+<div class="tabpanel" id="t-link">
+<h3>Putting it together</h3>
+<p>A linked public narrative connects why <em>you</em> are called, why <em>we</em> are called, and what our mission asks of us <em>now</em>. <b>Your values are what link the three.</b> Storytelling isn’t linear: working on your story of now may change your story of self. The goal isn’t a fixed script. It’s a process you can adapt to any audience or moment, and it gets better with practice.</p>
+</div>
+</div><details class="acc"><summary>Coaching someone else’s story: what to listen for</summary><div>
+<p>Balance positive and constructive feedback. Skip vague praise (“That was great!”) and coach on specifics:</p>
+<ul>
+<li><b>Challenge:</b> “When you described ___, I got a clear picture of the challenge.” / “The challenge wasn’t clear. How would you describe ___?”</li>
+<li><b>Choice:</b> “To me, the choice you made was ___, and it made me feel ___.” / “Try focusing on the moment you made the choice.”</li>
+<li><b>Outcome:</b> “I understood the outcome to be ___, and it teaches me ___. How does it relate to your work now?”</li>
+<li><b>Values:</b> “It’s clear you value ___. It could be even clearer if you told us where that value comes from.”</li>
+<li><b>Details:</b> “The image of ___ really helped me feel what you felt.” / “Tell us more about ___ so we can picture it.”</li>
+</ul></div></details></div></details><h3 class="practice-h">🧩 Try it</h3><div class="worksheet"><h4>Worksheet: my linked public narrative</h4>
+<p class="muted" style="font-size:.9rem">Write a few words for each box. You’re looking for specific moments and images, not a finished speech.</p>
+<div class="wgrid">
+<div class="h blank"></div><div class="h">Challenge</div><div class="h">Choice</div><div class="h">Outcome</div>
+<div class="h">Self</div><textarea aria-label="Self — challenge" data-k="n-self-c"></textarea><textarea aria-label="Self — choice" data-k="n-self-ch"></textarea><textarea aria-label="Self — outcome" data-k="n-self-o"></textarea>
+<div class="h">Us</div><textarea aria-label="Us — challenge" data-k="n-us-c"></textarea><textarea aria-label="Us — choice" data-k="n-us-ch"></textarea><textarea aria-label="Us — outcome" data-k="n-us-o"></textarea>
+<div class="h">Now</div><textarea aria-label="Now — challenge" data-k="n-now-c"></textarea><textarea aria-label="Now — choice" data-k="n-now-ch"></textarea><textarea aria-label="Now — outcome" data-k="n-now-o"></textarea>
+</div>
+<label for="w-nv">Clear &amp; consistent values that link my stories</label><textarea data-k="n-values" id="w-nv"></textarea>
+</div></section>
+<!-- ============ 4. ONE-ON-ONES ============ -->
+<section class="lesson" data-title="1:1 organizing conversations" id="one-on-ones"><header><span class="num">Section 4</span><span class="time">· 12 min</span><h2>1:1 organizing conversations</h2></header><div class="video" data-n="4" data-title="1:1 organizing conversations" data-topics="" data-video="one-on-ones"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li>Frame it → <b>get their story</b> (listen 70%+) → assess alignment → <b>make the ask</b>.</li><li>Make asks <b>SMART</b> and yes-or-no: “Will you canvass Saturday at 10 a.m.?”, not “Come by sometime?”</li><li><b>Empathize, then educate.</b> Ask questions more than you lecture.</li><li>Follow up when you said you would.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">A 1:1 is a structured conversation that builds a public relationship as the basis for acting together on shared issues, interests and values. Good 1:1s are how we recruit volunteers, win over voters and develop leaders.</p><div class="callout good"><h4>The 70% rule</h4><p>A good 1:1 is <b>at least 70% listening</b>. Share enough of your own story to show your stake and to model honesty, but focus on theirs.</p></div><p>Start by <b>framing the conversation</b>: who you are, what you’re doing and why you want to talk. Then:</p><ol class="steps">
+<li><h4>Get their story</h4><p>Ask questions, and really listen, to learn what they care about. Start broad (“If you could change three things about your neighborhood tomorrow, what would they be?”), then ask follow-ups that get at their personal stake and underlying values. Go from the surface issue to “why does that matter to you?” to the value underneath.</p></li>
+<li><h4>Assess alignment</h4><p>Based on what you heard, look at three things:</p>
+<div class="grid g3" style="margin-top:6px"><div class="card"><h4>Alignment</h4><p>Do they share our approach and goals?</p></div><div class="card"><h4>Influence</h4><p>Do they have time, skills or relationships to contribute?</p></div><div class="card"><h4>Commitment</h4><p>How likely are they to follow through? How deep is their self-interest?</p></div></div></li>
+<li><h4>Set a commitment (make the ask)</h4><p>If there’s alignment, ask for a next step: a follow-up meeting, a volunteer shift, a pledge to vote, an event. Make it <b>SMART</b> (Specific, Measurable, Achievable, Relevant, Time-bound) and ask it as a <b>direct yes-or-no question</b>.</p></li>
+</ol><h3>Spot the stronger ask</h3><div class="compare">
+<div class="bad-ex"><b>Weak:</b> “Will you come to one of our future events?”</div>
+<div class="good-ex"><b>Strong:</b> “Will you join our canvass this Saturday at 10 a.m., starting from the east side staging location, to talk with voters about Dimple?”</div>
+</div></div></details><h3 class="practice-h">🧩 Try it</h3><p style="margin-top:14px">Then help them plan: <em>How will you get there? Do you need childcare? Can I text you a reminder Friday?</em> And <b>follow up when you said you would.</b> The ask has to connect to something <em>they</em> care about, or the commitment won’t hold.</p><div class="quiz" data-pass="1">
+<div class="q" data-a="2"><p class="stem">Which of these is a SMART ask?</p><div class="opts">
+<button>“You should really get involved sometime.”</button>
+<button>“Would you maybe help out with the campaign?”</button>
+<button>“Can you make 40 calls from our phone bank next Tuesday from 6–8 p.m.?”</button></div>
+<p class="fb" data-x="It’s specific, measurable, achievable, relevant and time-bound, and it’s a yes-or-no question."></p></div>
+</div><h3>Going deeper: educate, inoculate, agitate</h3><div class="tabs">
+<div class="tablist"><button data-tab="t-edu">Educate</button><button data-tab="t-ino">Inoculate</button><button data-tab="t-agi">Agitate</button></div>
+<div class="tabpanel" id="t-edu">
+<p>Some people already understand an issue. Many hold mixed or contradictory ideas. The rule is <b>empathize, then educate.</b> People don’t change their minds when they feel unheard, judged or misunderstood. Listen for the feelings, values and unmet needs under their opinions, find what you share, and <b>ask questions more than you make statements</b>.</p>
+<div class="grid g2">
+<div class="card"><h4>When someone blames individuals for a shared problem</h4><p>“Do you know anyone who tried really hard and still couldn’t solve this? Why not?” “What support do you wish you’d had?”</p></div>
+<div class="card"><h4>When someone blames another group</h4><p>“Do you know anyone in that group? Do you think they face this too?” “Might you have interests in common?” “Who benefits when we’re divided?”</p></div>
+<div class="card"><h4>When someone believes a false solution</h4><p>“Have you tried that? What happened?” “I’ve seen people try ___. What would happen if we all did that?”</p></div>
+</div>
+<h4>Four techniques that make persuasion stick</h4>
+<div class="grid g4">
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Self-persuasion</h4><small>tap to flip</small></div><div class="fb">People change their minds more readily than they accept being told what to think.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Active processing</h4><small>tap to flip</small></div><div class="fb">Questions that make people think hard produce bigger, longer-lasting changes in attitude.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Perspective-taking</h4><small>tap to flip</small></div><div class="fb">Ask people to recall experiences that help them understand how others feel. This reduces prejudice.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Cognitive dissonance</h4><small>tap to flip</small></div><div class="fb">When someone’s lived experience contradicts an opinion they stated, they may revise the opinion.</div></div></div>
+</div>
+</div>
+<div class="tabpanel" id="t-ino">
+<p>In medicine, inoculation builds immunity. In organizing, it means preparing supporters in advance for misleading claims, fear tactics and attempts to divide them, so they aren’t caught off guard. Use questions to help people:</p>
+<ol><li>Understand why an opponent might oppose our efforts</li><li>Anticipate the specific arguments and tactics they’ll use</li><li>Prepare how we’ll respond</li></ol>
+<div class="campaign"><p>Before Election Day, talk supporters through what they might hear: rumors about voting times or places, confusion about ID rules, or false claims about the candidate. Point them to official sources (the Mecklenburg County Board of Elections) and campaign staff. Never repeat or spread unverified claims yourself.</p></div>
+<p><b>Solidarity is the antidote:</b> opponents win when they divide us, and we win when we come together.</p>
+</div>
+<div class="tabpanel" id="t-agi">
+<p><b>Agitation</b> is a caring challenge that helps someone see the attitudes, beliefs or behaviors holding them back from their full power. It only works within a <b>trusting relationship</b> and must be rooted in <em>their</em> self-interest, so it usually comes in a later conversation, not a first 1:1. Module 2 covers agitation in depth.</p>
+</div>
+</div><div class="worksheet"><h4>Plan a 1:1</h4>
+<label for="w-11who">Who will I have a 1:1 with this week?</label><input data-k="oo-who" id="w-11who" type="text"/>
+<label for="w-11frame">How will I frame the conversation?</label><textarea data-k="oo-frame" id="w-11frame"></textarea>
+<label for="w-11q">Three open questions I’ll ask</label><textarea data-k="oo-q" id="w-11q"></textarea>
+<label for="w-11ask">My SMART ask (a yes-or-no question)</label><textarea data-k="oo-ask" id="w-11ask"></textarea>
+</div></section>
+<!-- ============ 5. COMPASSIONATE PRESENCE ============ -->
+<section class="lesson" data-title="Listening &amp; compassionate presence" id="presence"><header><span class="num">Section 5</span><span class="time">· 10 min</span><h2>Listening and compassionate presence</h2></header><div class="video" data-n="5" data-title="Listening and compassionate presence" data-topics="" data-video="presence"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li>Listen for the <b>need</b> behind a feeling (respect, safety, being heard) instead of arguing.</li><li><b>Center</b> yourself before a conversation: stand tall, balance, breathe, relax your jaw and shoulders.</li><li>Notice your energy after a tough door, and reset before the next one.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">You can’t build real relationships while distracted, defensive or rushed. These practices help you stay grounded and truly hear the voter in front of you, even at the fortieth door of the day.</p><h3>Nonviolent Communication (NVC): feelings and needs</h3><p>Psychologist Marshall Rosenberg developed NVC to help people say what matters to them and hear what matters to others. It isn’t an organizing method itself, but it builds the empathy, listening and emotional intelligence that organizing needs.</p><div class="grid g2">
+<div class="card"><h4>Needs are universal</h4><p>Needs are what’s most alive in us: our core values and deepest longings. Everyone needs rest, shelter, food, connection and more, even if we feel them to different degrees.</p></div>
+<div class="card"><h4>Feelings signal needs</h4><p>Met needs bring joy, gratitude, hope. Unmet needs bring sadness, anger, frustration. Feelings are neither right nor wrong.</p></div>
+</div><div class="callout"><p>Our <em>strategies</em> for meeting needs can conflict, but the <em>needs</em> themselves are shared. If you can boil a disagreement down to feelings and needs, people start to see each other as human beings and solutions get easier to find.</p></div><div class="campaign"><p>A voter snaps, “You people only show up at election time.” Instead of arguing, listen for the need: to be <b>respected</b> and <b>heard</b>. Try: “It sounds like you’re frustrated that nobody checks in between elections. That matters. What would you want your council member to know?”</p></div><details class="acc"><summary>The four dimensions of centering</summary><div>
+<ul>
+<li><b>Length:</b> line up head, shoulders, hips, knees and ankles so you’re not fighting gravity. Feel the dignity of standing tall.</li>
+<li><b>Width:</b> spread your weight evenly between both feet, hips and shoulders. Feel your connection to others and the world.</li>
+<li><b>Depth:</b> don’t lean forward or back on your heels. Feel the support behind you: your history and the people who came before you.</li>
+<li><b>Center:</b> drop your attention to your belly, your center of gravity.</li>
+</ul>
+<p>At each step, check whether you’re relaxed but alert. Are your eyes, jaw and shoulders relaxed? Is your breath deep and low in your belly? Under pressure, notice where you tighten (jaw, chest, stomach), then let go and come back to center. The practice isn’t about stiff posture. It’s about <em>feeling</em> your aliveness.</p></div></details><h3>Noticing sensations and emotions</h3><p>The fastest way to become present is to notice your physical sensations: <b>temperature</b> (cool, warm, sweating), <b>pressure</b> (tightness, contraction, relaxation) and <b>movement</b> (pulse, breath, tingling). Emotions are short-lived. Moods last longer and can open or close relationships. Emotions you don’t deal with can settle into moods (unresolved anger can become resentment).</p></div></details><h3 class="practice-h">🧩 Try it</h3><h3>Centering practice</h3><p>Centering means being present to others and your surroundings, open to what’s possible and connected to your values. This approach comes from Strozzi Somatics. Try the guided practice below. It takes about a minute.</p><div class="guided" id="centering">
+<div aria-live="polite" class="gstep">Ready when you are.</div>
+<div aria-hidden="true" class="breath"></div>
+<button class="btn" id="center-go" type="button">Start guided centering</button>
+</div><p>Click a zone to see how energy level and pleasantness combine:</p><div class="chooser">
+<div class="matrix" style="margin-bottom:10px">
+<button class="cell c-plan pill" data-show="hp" style="border-radius:12px;text-align:left"><strong style="display:block">High energy · Pleasant</strong><span class="muted">tap</span></button>
+<button class="cell c-do pill" data-show="hu" style="border-radius:12px;text-align:left"><strong style="display:block">High energy · Unpleasant</strong><span class="muted">tap</span></button>
+<button class="cell c-drop pill" data-show="lp" style="border-radius:12px;text-align:left"><strong style="display:block">Low energy · Pleasant</strong><span class="muted">tap</span></button>
+<button class="cell c-del pill" data-show="lu" style="border-radius:12px;text-align:left"><strong style="display:block">Low energy · Unpleasant</strong><span class="muted">tap</span></button>
+</div>
+<div class="reveal-box" data-panel="hp"><b>Excitement, enthusiasm, curiosity.</b> Great energy for rallies and recruitment. Stay grounded enough to listen.</div>
+<div class="reveal-box" data-panel="hu"><b>Anger, anxiety, frustration.</b> After a hostile door, pause and re-center before knocking on the next one.</div>
+<div class="reveal-box" data-panel="lp"><b>Calm, content, peaceful.</b> A good state for deep 1:1s and reflection.</div>
+<div class="reveal-box" data-panel="lu"><b>Tired, discouraged, lethargic, grief.</b> It’s okay. Take a break, check in with your team, and take care of yourself.</div>
+</div></section>
+<!-- ============ 6. BASE BUILDING ============ -->
+<section class="lesson" data-title="Base building &amp; key roles" id="base"><header><span class="num">Section 6</span><span class="time">· 10 min</span><h2>Base building: constituency, community, base</h2></header><div class="video" data-n="6" data-title="Base building: constituency, community, base" data-topics="" data-video="base"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li><b>Constituency</b> → <b>community</b> (sees itself as “us”) → <b>base</b> (takes action).</li><li>Leaders are people others follow. That’s not the same as having a title. “Organizer” is a role anyone can play.</li><li><b>Organize supporters, win over the middle</b>, and don’t get stuck on firm opposition.</li><li>Help people climb the <b>leadership ladder</b> one rung at a time, and invite them personally.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">Campaigns win by turning a <em>constituency</em> into a <em>community</em> and a community into an active <em>base</em>. These ideas are adapted from the work of Hashim Benford.</p><figure class="fig"><svg aria-label="Nested circles: Constituency contains Community contains Base" role="img" viewbox="0 0 640 230">
+<g font-family="Figtree,sans-serif" text-anchor="middle">
+<ellipse cx="320" cy="118" fill="var(--brand-soft)" rx="300" ry="108" stroke="var(--brand)" stroke-width="2"></ellipse>
+<ellipse cx="320" cy="135" fill="var(--accent-soft)" rx="200" ry="78" stroke="var(--accent)" stroke-width="2"></ellipse>
+<ellipse cx="320" cy="152" fill="var(--good-soft)" rx="100" ry="48" stroke="var(--good)" stroke-width="2"></ellipse>
+<text fill="var(--brand)" font-size="16" font-weight="700" x="320" y="36">CONSTITUENCY</text><text fill="var(--muted)" font-size="12" x="320" y="55">the people whose interests we serve</text>
+<text fill="var(--accent)" font-size="16" font-weight="700" x="320" y="84">COMMUNITY</text><text fill="var(--muted)" font-size="12" x="320" y="102">…who see themselves as an “us”</text>
+<text fill="var(--good)" font-size="16" font-weight="700" x="320" y="150">BASE</text><text fill="var(--muted)" font-size="12" x="320" y="168">…who take action together</text>
+</g></svg></figure><div class="grid g3">
+<div class="card"><h4>Constituency</h4><p>The people an organization serves and organizes, often defined by geography, demographics, economics or institutions. For this campaign, that’s Charlotte voters citywide.</p></div>
+<div class="card"><h4>Community</h4><p>A constituency that sees itself as an “us” with shared interests. Sharing traits doesn’t automatically create that feeling. Organizers help people discover what they have in common.</p></div>
+<div class="card"><h4>Base</h4><p>People who feel part of the community <b>and take action</b>: vote, volunteer, donate, attend, share.</p></div>
+</div><details class="acc"><summary>Example from the training: two neighborhoods, one campaign</summary><div><p>A mostly Black Southside and a largely Latino Eastside both have far fewer parks than the wealthier Northside, but the two neighborhoods don’t see themselves as an “us.” An organizer brings young people from both together around their frustration. They petition, hold events, turn out to the city budget hearings and rally for more courts and bathrooms in both areas. Everyone who takes part becomes the <b>base</b>, and through the campaign the neighborhoods start to see themselves as <b>one community</b>.</p></div></details><h3>Mapping who we talk to</h3><p>We map people on two axes, always <b>relative to a specific issue, community and ask</b>:</p><div class="grid g2">
+<div class="card"><h4>Alignment</h4><p>How closely do they share our view?<br/><b>Strong supporter</b> · <b>Undecided / mixed</b> (most people!) · <b>Firmly opposed</b></p></div>
+<div class="card"><h4>Influence</h4><p>How much do they shape what others think and do?<br/><b>High</b> · <b>Medium</b> · <b>Low</b></p></div>
+</div><div class="callout accent"><h4>Organize supporters, win over the middle, don’t get stuck on firm opposition</h4>
+<p><b>Organize our supporters:</b> connect strong supporters and develop them as leaders.<br/>
+<b>Win over the middle:</b> as supporters take action together, they persuade undecided people by showing why joining is in their interest.<br/>
+<b>Don’t get stuck on firm opposition:</b> some people won’t move. Be courteous, thank them, and spend your limited time where it counts. As more people join us, opposition has less influence.</p>
+<p class="src">The source packet calls these groups “advanced, intermediate and backwards” and the principle “unite the advanced, win over the middle, isolate the backwards.” We use campaign-friendly language here.</p></div><h3>The leadership ladder</h3><p>Think of each supporter’s journey as a ladder. They start at the bottom, interested but not committed. Each rung is a deeper commitment, and the safest way up is <b>one rung at a time</b>.</p><figure class="fig"><svg aria-label="Leadership ladder with five rungs" role="img" viewbox="0 0 640 270">
+<g font-family="Figtree,sans-serif" font-size="14">
+<line stroke="var(--muted)" stroke-width="4" x1="120" x2="120" y1="20" y2="260"></line><line stroke="var(--muted)" stroke-width="4" x1="220" x2="220" y1="20" y2="260"></line>
+<g fill="var(--ink)">
+<line stroke="var(--brand)" stroke-width="6" x1="120" x2="220" y1="240" y2="240"></line><text x="240" y="245">Signs up / pledges to vote</text>
+<line stroke="var(--brand)" stroke-width="6" x1="120" x2="220" y1="190" y2="190"></line><text x="240" y="195">Attends an event or training</text>
+<line stroke="var(--brand)" stroke-width="6" x1="120" x2="220" y1="140" y2="140"></line><text x="240" y="145">Takes a shift: canvass, phone bank, poll greet</text>
+<line stroke="var(--accent)" stroke-width="6" x1="120" x2="220" y1="90" y2="90"></line><text x="240" y="95">Recruits friends, hosts a house meeting</text>
+<line stroke="var(--good)" stroke-width="6" x1="120" x2="220" y1="40" y2="40"></line><text font-weight="700" x="240" y="45">Team captain: leads and develops others</text>
+</g></g></svg></figure><details class="acc" open=""><summary>Story: Ruby Duncan and the Welfare Mamas</summary><div>
+<p>Ruby Duncan started working in Louisiana fields at age 8 and later moved to Nevada for better opportunities. After an on-the-job injury, she relied on welfare to support her children. When her friend Olestina Walker invited her to a welfare mothers’ organizing meeting, Ruby said, <em>“You gotta be crazy! We can’t go down there asking people for money.”</em> Olestina came to her house anyway: <em>“Ruby, you are going with me.”</em></p>
+<p>At that first meeting Ruby learned words like “legislature” and who made the decisions affecting her life. She marched with a small group around the legislative building. When they got a meeting with lawmakers, the others encouraged her to speak. She never thought she’d be the one, but telling them how the Welfare Department treated her came easily. When the legislators said there was no money, she got angrier and more vocal. She joined the National Welfare Rights Organization and helped plan the biggest welfare rights march in the history of the Las Vegas Strip.</p>
+<p><b>The lesson:</b> Ruby climbed one rung at a time: show up, march, speak, lead. And it started because someone personally asked her, twice.</p>
+</div></details></div></details><h3 class="practice-h">🧩 Try it</h3><h3>Key roles: flip to learn</h3><div class="grid g3">
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Activists</h4><small>tap to flip</small></div><div class="fb">The most active people in the base. They regularly canvass, phone bank, attend trainings and events.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Leaders</h4><small>tap to flip</small></div><div class="fb">People others look to for advice and direction. This isn’t the same as formal authority: the neighbor everyone calls when there’s a problem is a leader.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Organizers</h4><small>tap to flip</small></div><div class="fb">Coordinate the base and develop other leaders. Organizer is a <b>role, not a job title</b>. Volunteers can be organizers. A campaign’s scale depends on how many it has.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Strategic leaders</h4><small>tap to flip</small></div><div class="fb">Responsible for strategic decisions, and for developing the skills and analysis of other organizers.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Members</h4><small>tap to flip</small></div><div class="fb">Part of the base who’ve made a defined commitment (for example signing on or pledging a level of activity). Every member is in the base, but not everyone in the base is a member.</div></div></div>
+<div class="flip" role="button" tabindex="0"><div class="fi"><div class="ff"><h4>Authority</h4><small>tap to flip</small></div><div class="fb">A formal position, like an HOA president. People may or may not follow them. Don’t confuse authority with leadership.</div></div></div>
+</div><div class="sorter" data-cats="Recruit as volunteer|Persuade|Thank &amp; move on">
+<p class="muted">Practice: what’s the best next step with each person you meet?</p>
+<div class="item" data-cat="Recruit as volunteer"><span class="txt">A pastor who loves Dimple’s housing work and whose congregation trusts her opinion.</span><span class="why">Strongly aligned with high influence: invite her to lead or host.</span></div>
+<div class="item" data-cat="Persuade"><span class="txt">A voter worried about safety who says “all politicians are the same” but wants to hear more.</span><span class="why">Mixed views, open to talk. This is the middle, where persuasion matters.</span></div>
+<div class="item" data-cat="Thank &amp; move on"><span class="txt">A resident who firmly supports another candidate and doesn’t want to talk.</span><span class="why">Be polite, mark it in the canvass app, and move on.</span></div>
+<div class="item" data-cat="Recruit as volunteer"><span class="txt">A supporter who says “I wish I could do more” and runs the neighborhood group chat.</span><span class="why">Aligned and influential. Make an ask to volunteer.</span></div>
+<p class="sort-score muted"></p>
+</div></section>
+<!-- ============ 7. EQUITY ============ -->
+<section class="lesson" data-title="Understanding barriers &amp; equity" id="systems"><header><span class="num">Section 7</span><span class="time">· 6 min</span><h2>Understanding barriers and equity</h2></header><div class="video" data-n="7" data-title="Understanding barriers and equity" data-topics="" data-video="systems"></div><div class="takeaways"><h3>Key takeaways</h3><ul><li>Barriers can build up at four levels: <b>individual, interpersonal, institutional, structural</b>.</li><li>Neighborhoods have different histories. Your safety and opportunity shouldn’t depend on your zip code.</li><li>Go into every neighborhood <b>curious, not assuming</b>.</li></ul></div><details class="acc fulllesson"><summary>📖 Prefer to read? Open the full lesson</summary><div><p class="lead">People don’t all start from the same place. To organize across Charlotte, it helps to understand how disadvantages build up across different levels of society.</p><p>The source training describes <b>systems of oppression</b>: organized decisions, structures and ideas that consistently disadvantage some groups and advantage others. They show up at four levels:</p><div class="grid g4">
+<div class="card"><span class="tag">Micro</span><h4>Individual</h4><p>Bias and prejudice inside a person, including internalized beliefs about one’s own group.</p></div>
+<div class="card"><h4>Interpersonal</h4><p>Bias acted out between people.</p></div>
+<div class="card"><h4>Institutional</h4><p>Unequal treatment built into an organization’s policies and practices.</p></div>
+<div class="card"><span class="tag">Macro</span><h4>Structural</h4><p>Patterns across many institutions and society as a whole.</p></div>
+</div><p>The packet looks at how <b>race, class and gender</b> disadvantages work at each level, and argues they are deeply intertwined rather than separate or ranked. It discusses <b>intersectionality</b>: for example, a Black woman’s experience differs from both a white woman’s and a Black man’s. It warns that ranking one form of inequality above another tends to pit communities against each other.</p><div class="campaign"><h4>Why this matters at the door</h4>
+<p>Dimple’s first priority is a safe Charlotte <b>whatever your zip code</b>. Neighborhoods have different histories of investment in sidewalks, parks, housing and jobs. When you listen for the barriers a voter has faced, and don’t assume everyone’s experience matches yours, you build trust faster and help people see how their concerns connect to their neighbors’.</p></div><div class="callout"><p><b>Practice:</b> Before your next shift, look up the neighborhood you’ll canvass. What’s changed there recently? What might residents care about most? Go in curious, not assuming.</p></div><p class="src">This section summarizes the packet’s “Systems of Oppression” chapter in campaign-appropriate language. Volunteers who want the full framework can ask their coordinator for the original packet.</p></div></details></section>
+<!-- ============ 8. BRINGING IT TOGETHER ============ -->
+<section class="lesson" data-title="Put it into practice" id="practice">
+<header><span class="num">Section 8</span><span class="time">· 5 min</span><h2>Put it into practice: a door conversation</h2></header><div class="video" data-n="8" data-title="Put it into practice: a door conversation" data-topics="" data-video="practice"></div>
+<p class="lead">Here’s how Module 1 fits together in a real conversation at the door. Click each stage to see the skill behind it.</p>
+<div class="chooser">
+<div class="pill-row">
+<button class="pill" data-show="d1">1 · Frame</button><button class="pill" data-show="d2">2 · Their story</button><button class="pill" data-show="d3">3 · Your story</button><button class="pill" data-show="d4">4 · Story of now</button><button class="pill" data-show="d5">5 · The ask</button><button class="pill" data-show="d6">6 · Follow-up</button>
+</div>
+<div class="reveal-box" data-panel="d1"><p>“Hi, I’m ___, a volunteer and a neighbor. I’m out talking with folks about what matters most to them in Charlotte. Do you have two minutes?”</p><p class="muted">Skill: <b>framing the 1:1</b>. Say who you are, what you’re doing and why.</p></div>
+<div class="reveal-box" data-panel="d2"><p>“What’s one thing you’d change about this neighborhood?” … “Why does that matter to you?”</p><p class="muted">Skill: <b>getting their story</b>. Listen 70% of the time and go from issue to interest to value.</p></div>
+<div class="reveal-box" data-panel="d3"><p>“I hear you. I got involved because ___.” (keep it to 30 seconds)</p><p class="muted">Skill: <b>story of self</b>, showing your own stake.</p></div>
+<div class="reveal-box" data-panel="d4"><p>“Dimple chairs the Council’s budget committee and has fought for affordable housing and safer neighborhoods. The next city election decides who makes those calls.”</p><p class="muted">Skill: <b>story of now</b> and <b>accurate candidate facts</b>.</p></div>
+<div class="reveal-box" data-panel="d5"><p>“Can we count on your vote for Dimple Ajmera for City Council At-Large?” / “Would you put up a yard sign?”</p><p class="muted">Skill: a <b>direct yes-or-no ask</b>.</p></div>
+<div class="reveal-box" data-panel="d6"><p>Record the result accurately in the campaign’s canvassing app, and follow up on any promise you made.</p><p class="muted">Skill: <b>accountability</b>, which builds trust over time.</p></div>
+</div>
+<div class="callout accent"><p>Always follow the current script and data-entry instructions from your field organizer. This walkthrough teaches the skills behind the script; it doesn’t replace it.</p></div>
+</section>
+<!-- ============ 9. QUIZ ============ -->
+<section class="lesson" data-title="Knowledge check" id="check">
+<header><span class="num">Section 9</span><span class="time">· 5 min</span><h2>Module 1 knowledge check</h2></header>
+<p>Answer at least 7 of 9 correctly to complete the module.</p>
+<div class="quiz" data-pass="0.77">
+<div class="q" data-a="1"><p class="stem">1. What office is Dimple Ajmera running for?</p><div class="opts"><button>Mayor of Charlotte</button><button>Charlotte City Council, At-Large</button><button>Mecklenburg County Commission</button></div><p class="fb" data-x="She’s running as a Democrat for Charlotte City Council At-Large."></p></div>
+<div class="q" data-a="2"><p class="stem">2. Which is NOT one of Dimple’s four campaign priorities?</p><div class="opts"><button>Affordable housing</button><button>Economic opportunity across the city</button><button>Reducing the number of council seats</button><button>Sustainable infrastructure</button></div><p class="fb" data-x="Her priorities are safety, sustainable infrastructure, affordable housing and economic opportunity."></p></div>
+<div class="q" data-a="0"><p class="stem">3. How is self-interest different from selfishness?</p><div class="opts"><button>Self-interest means “self with others,” the basis for acting together</button><button>They are the same thing</button><button>Self-interest puts others before yourself</button></div><p class="fb" data-x="Selfishness puts self before others. Self-interest understands self with others."></p></div>
+<div class="q" data-a="2"><p class="stem">4. What’s the structure of a story in public narrative?</p><div class="opts"><button>Problem → Statistic → Solution</button><button>Beginning → Middle → End</button><button>Challenge → Choice → Outcome</button></div><p class="fb" data-x="Challenge, choice and outcome. The choice reveals the values."></p></div>
+<div class="q" data-a="1"><p class="stem">5. A Story of Now should end with…</p><div class="opts"><button>A list of statistics about the problem</button><button>A specific, hopeful choice each listener can make right now</button><button>A description of what went wrong in the past</button></div><p class="fb" data-x="A Story of Now is a call to hopeful action."></p></div>
+<div class="q" data-a="0"><p class="stem">6. In a good 1:1, about how much of the time should you spend listening?</p><div class="opts"><button>At least 70%</button><button>About 30%</button><button>50/50 exactly</button></div><p class="fb" data-x="Focus on getting their story."></p></div>
+<div class="q" data-a="2"><p class="stem">7. When someone holds an opinion you think is wrong, the rule is…</p><div class="opts"><button>Correct them right away with facts</button><button>Move on immediately</button><button>Empathize, then educate</button></div><p class="fb" data-x="People don’t change their minds when they feel unheard or judged."></p></div>
+<div class="q" data-a="1"><p class="stem">8. What’s the difference between a campaign’s community and its base?</p><div class="opts"><button>There is no difference</button><button>The base is the part of the community that actually takes action</button><button>The base is only paid staff</button></div><p class="fb" data-x="The base is the people who take action together."></p></div>
+<div class="q" data-a="0"><p class="stem">9. Where should you spend most of your persuasion time?</p><div class="opts"><button>With undecided voters who have mixed views</button><button>With voters firmly committed to an opponent</button><button>Only with people who already volunteer</button></div><p class="fb" data-x="Organize supporters, win over the middle, and don’t get stuck on firm opposition."></p></div>
+<div class="score"></div>
+</div>
+<div class="certificate" data-cert="" hidden="">
+<p class="tag">Module complete</p>
+<h3>Well done, <span data-certname="">Volunteer</span>!</h3>
+<p>You’ve completed <b>Module 1: People</b>. Next, learn how to step into your power and build strong teams.</p>
+<label class="muted" for="certname" style="font-size:.85rem">Name for your completion badge</label>
+<input data-setname="" id="certname" style="max-width:320px;margin:6px auto 14px;display:block" type="text"/>
+<a class="btn accent" href="module-2-power.html">Start Module 2: Power →</a>
+</div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var steps = ['Stand or sit tall. Let your head, shoulders and hips line up (length).','Spread your weight evenly left and right (width).','Neither leaning forward nor back. Feel the support behind you (depth).','Drop your attention to your belly, your center.','Relax your eyes, jaw and shoulders.','Breathe in slowly…','…and breathe out.','Ask yourself: what do I care about in the conversation ahead?','You’re centered. Take that into your next conversation.'];
+  var box = document.getElementById('centering'); if (!box) return;
+  var txt = box.querySelector('.gstep'), orb = box.querySelector('.breath'), btn = document.getElementById('center-go'), t;
+  btn.addEventListener('click', function(){
+    clearInterval(t); var i = 0; txt.textContent = steps[0]; btn.textContent = 'Restart';
+    t = setInterval(function(){ i++; if (i >= steps.length){ clearInterval(t); orb.classList.remove('in'); return; } txt.textContent = steps[i]; orb.classList.toggle('in', i % 2 === 1); }, 5000);
+  });
+});
+</script>
+</main></div>
+<footer class="foot"><p>Training content adapted for campaign volunteers from the <em>People, Power, Purpose</em> participant resource packets (Organize NC Fellowship Training Intensive, 2023), which draw on the work of Marshall Ganz, Hashim Benford, Marshall Rosenberg, Strozzi Institute, Grassroots Power Project, Bruce Tuckman and others. Candidate information from dimpleajmera.com and the City of Charlotte.</p>
+<p>Your worksheet answers are stored only in this browser on this device.</p><span class="paid">Paid for by The Committee to Elect Dimple Ajmera</span></footer>
+<script>(function(){
+  var MOD = document.body.getAttribute('data-module') || 'hub';
+  var store = {
+    get: function(k, d){ try { var v = localStorage.getItem('dafm:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { localStorage.setItem('dafm:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  window.DAFM = { store: store, mod: MOD };
+
+  /* ---------- sections, TOC, progress ---------- */
+  var lessons = Array.prototype.slice.call(document.querySelectorAll('section.lesson'));
+  var done = store.get(MOD + ':done', []);
+  var tocList = document.querySelector('.toc ol');
+  if (lessons.length) store.set(MOD + ':total', lessons.length);
+
+  function updateProgress(){
+    var n = lessons.filter(function(s){ return done.indexOf(s.id) > -1; }).length;
+    var pct = lessons.length ? Math.round(n / lessons.length * 100) : 0;
+    var bar = document.querySelector('.topbar .pbar i'); if (bar) bar.style.width = pct + '%';
+    var p = document.querySelector('.topbar .pct'); if (p) p.textContent = pct + '%';
+    lessons.forEach(function(s){
+      var a = tocList && tocList.querySelector('a[href="#' + s.id + '"]');
+      var isDone = done.indexOf(s.id) > -1;
+      if (a) a.classList.toggle('done', isDone);
+      var b = s.querySelector('.complete-row .btn');
+      if (b){ b.classList.toggle('done', isDone); b.textContent = isDone ? '✓ Section complete' : 'Mark section complete'; }
+      gate(s);
+    });
+    var cert = document.querySelector('[data-cert]');
+    if (cert) cert.hidden = pct < 100;
+    if (pct >= 100 && !store.get(MOD + ':synced', false)) {
+      store.set(MOD + ':synced', true);
+      syncHubCompletion(MOD);
+    }
+  }
+
+  function syncHubCompletion(mod) {
+    try {
+      fetch('/volunteer/api/training/complete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ moduleId: mod })
+      }).then(function(r){ return r.json(); }).then(function(res){
+        if (res && res.ok && !res.guest) {
+          var toast = document.createElement('div');
+          toast.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:#1e3a6e;color:#fff;padding:16px 20px;border-left:4px solid #b11a2b;box-shadow:0 4px 16px rgba(0,0,0,0.25);font-family:var(--sans);font-size:0.9rem;max-width:340px;';
+          toast.innerHTML = '<b>Module Complete! ✓</b><p style="margin:4px 0 0;font-size:0.82rem;opacity:0.95;">' + (res.isCertified ? 'Congratulations! You are now Organizing Intensive Certified!' : 'Progress saved to your Volunteer Hub profile.') + '</p><a href="/volunteer/dashboard" style="color:#fff;display:inline-block;margin-top:8px;font-weight:700;text-decoration:underline;">View in Hub →</a>';
+          document.body.appendChild(toast);
+          setTimeout(function(){ toast.style.opacity = '0'; setTimeout(function(){ toast.remove(); }, 500); }, 9000);
+        }
+      }).catch(function(){});
+    } catch(e){}
+  }
+  function markDone(id, val){
+    var i = done.indexOf(id);
+    if (val && i < 0) done.push(id);
+    if (!val && i > -1) done.splice(i, 1);
+    store.set(MOD + ':done', done); updateProgress();
+  }
+  window.DAFM.markDone = markDone;
+  window.DAFM.gate = function(s){ gate(s); };
+
+  /* ---------- completion gate: every worksheet field needs an answer ---------- */
+  function isCheck(s){ return /^check/.test(s.id) && !!s.querySelector('.quiz'); }
+  function filled(el){ return String(el.value || '').trim() !== ''; }
+  function fieldsOf(s){ return Array.prototype.slice.call(s.querySelectorAll('[data-k]')); }
+  function gate(s){
+    var b = s.querySelector('.complete-row button.btn'), hint = s.querySelector('.complete-row .gate-hint');
+    if (!b) return;
+    var isDone = done.indexOf(s.id) > -1, msg = '';
+    if (!isDone){
+      if (isCheck(s)) msg = 'Pass the knowledge check above to complete this section.';
+      else {
+        var f = fieldsOf(s), n = f.filter(filled).length;
+        if (n < f.length) msg = 'Answer every field in this section to complete it: ' + n + ' of ' + f.length + ' done.';
+      }
+    }
+    var locked = !!msg;
+    b.classList.toggle('locked', locked);
+    b.setAttribute('aria-disabled', locked ? 'true' : 'false');
+    if (hint){ hint.textContent = msg; hint.hidden = !locked; }
+  }
+  function firstEmpty(s){ return fieldsOf(s).filter(function(el){ return !filled(el); })[0]; }
+
+  lessons.forEach(function(s, idx){
+    if (tocList){
+      var li = document.createElement('li');
+      li.innerHTML = '<a href="#' + s.id + '"><span class="dot">' + (idx + 1) + '</span><span>' + (s.getAttribute('data-title') || s.id) + '</span></a>';
+      tocList.appendChild(li);
+    }
+    var row = document.createElement('div');
+    row.className = 'complete-row';
+    var next = lessons[idx + 1];
+    row.innerHTML = '<div class="gate"><button class="btn" type="button">Mark section complete</button><p class="gate-hint" role="status" aria-live="polite" hidden></p></div>' +
+      (next ? '<a class="btn ghost small" href="#' + next.id + '">Next: ' + next.getAttribute('data-title') + ' →</a>' : '');
+    row.querySelector('button').addEventListener('click', function(){
+      var isDone = done.indexOf(s.id) > -1;
+      if (!isDone && this.getAttribute('aria-disabled') === 'true'){
+        var el = firstEmpty(s);
+        if (el){
+          el.scrollIntoView({behavior:'smooth', block:'center'});
+          el.classList.add('needs'); setTimeout(function(){ el.focus({preventScroll:true}); }, 300);
+        } else { var q = s.querySelector('.quiz'); if (q) q.scrollIntoView({behavior:'smooth'}); }
+        return;
+      }
+      markDone(s.id, !isDone);
+      if (!isDone && next) setTimeout(function(){ next.scrollIntoView({behavior:'smooth'}); }, 250);
+    });
+    s.appendChild(row);
+  });
+
+  if ('IntersectionObserver' in window && tocList){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          tocList.querySelectorAll('a').forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, {rootMargin: '-30% 0px -65% 0px'});
+    lessons.forEach(function(s){ obs.observe(s); });
+  }
+
+  /* ---------- flip cards ---------- */
+  document.querySelectorAll('.flip').forEach(function(f){
+    f.setAttribute('aria-pressed', 'false');
+    if (!f.hasAttribute('tabindex')) f.setAttribute('tabindex', '0');
+    function flip(){ var on = f.classList.toggle('on'); f.setAttribute('aria-pressed', on); }
+    f.addEventListener('click', flip);
+    f.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flip(); } });
+  });
+
+  /* ---------- tabs ---------- */
+  document.querySelectorAll('.tabs').forEach(function(t){
+    var btns = t.querySelectorAll('.tablist button');
+    btns.forEach(function(b, i){
+      b.setAttribute('role', 'tab');
+      b.addEventListener('click', function(){
+        btns.forEach(function(x){ x.setAttribute('aria-selected', x === b); var p = t.querySelector('#' + x.getAttribute('data-tab')); if (p) p.hidden = x !== b; });
+      });
+      if (i === 0) b.click();
+    });
+  });
+
+  /* ---------- chooser (pill reveal) ---------- */
+  document.querySelectorAll('.chooser').forEach(function(c){
+    var btns = c.querySelectorAll('[data-show]');
+    var panels = c.querySelectorAll('[data-panel]');
+    panels.forEach(function(p){ p.hidden = true; });
+    btns.forEach(function(b){
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function(){
+        btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+        panels.forEach(function(p){ p.hidden = p.getAttribute('data-panel') !== b.getAttribute('data-show'); });
+      });
+    });
+  });
+
+  /* ---------- quizzes ---------- */
+  document.querySelectorAll('.quiz').forEach(function(qz){
+    var qs = qz.querySelectorAll('.q');
+    var scoreEl = qz.querySelector('.score');
+    var pass = parseFloat(qz.getAttribute('data-pass') || '0.8');
+    function tally(){
+      var answered = 0, right = 0;
+      qs.forEach(function(q){ if (q.dataset.answered){ answered++; if (q.dataset.answered === 'right') right++; } });
+      if (scoreEl && answered === qs.length){
+        var ok = right / qs.length >= pass;
+        scoreEl.hidden = false;
+        scoreEl.innerHTML = 'You scored ' + right + ' of ' + qs.length + '. ' + (ok ? '🎉 Nice work — this section is marked complete.' : 'Review the sections above and try again — you need ' + Math.ceil(pass * qs.length) + ' to pass.') +
+          ' <button type="button" class="btn small ghost" data-retake>Retake</button>';
+        scoreEl.querySelector('[data-retake]').addEventListener('click', reset);
+        var sec = qz.closest('section.lesson');
+        if (ok && sec) markDone(sec.id, true);
+        store.set(MOD + ':quiz', {right: right, total: qs.length});
+      }
+    }
+    function reset(){
+      qs.forEach(function(q){ delete q.dataset.answered; q.querySelectorAll('.opts button').forEach(function(b){ b.disabled = false; b.classList.remove('right', 'wrong'); }); var fb = q.querySelector('.fb'); if (fb) fb.classList.remove('show'); });
+      if (scoreEl) scoreEl.hidden = true;
+      qz.scrollIntoView({behavior: 'smooth'});
+    }
+    if (scoreEl) scoreEl.hidden = true;
+    qs.forEach(function(q){
+      var a = parseInt(q.getAttribute('data-a'), 10);
+      var btns = q.querySelectorAll('.opts button');
+      btns.forEach(function(b, i){
+        b.type = 'button';
+        b.addEventListener('click', function(){
+          if (q.dataset.answered) return;
+          q.dataset.answered = i === a ? 'right' : 'wrong';
+          btns.forEach(function(x, j){ x.disabled = true; if (j === a) x.classList.add('right'); });
+          if (i !== a) b.classList.add('wrong');
+          var fb = q.querySelector('.fb');
+          if (fb){ fb.innerHTML = (i === a ? '<b>Correct.</b> ' : '<b>Not quite.</b> ') + fb.getAttribute('data-x'); fb.classList.add('show'); }
+          tally();
+        });
+      });
+    });
+  });
+
+  /* ---------- sorters ---------- */
+  document.querySelectorAll('.sorter').forEach(function(s){
+    var cats = s.getAttribute('data-cats').split('|');
+    var items = s.querySelectorAll('.item');
+    var out = s.querySelector('.sort-score');
+    function tally(){
+      var n = 0, ok = 0;
+      items.forEach(function(it){ if (it.classList.contains('ok') || it.classList.contains('no')){ n++; if (it.classList.contains('ok')) ok++; } });
+      if (out) out.textContent = n === items.length ? ('You placed ' + ok + ' of ' + items.length + ' correctly.') : (n + ' of ' + items.length + ' sorted');
+    }
+    items.forEach(function(it){
+      var ch = document.createElement('div'); ch.className = 'choices';
+      cats.forEach(function(c){
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = c;
+        b.addEventListener('click', function(){
+          it.classList.remove('ok', 'no');
+          it.classList.add(c === it.getAttribute('data-cat') ? 'ok' : 'no');
+          ch.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x === b); x.style.background = x === b ? 'var(--brand)' : ''; x.style.color = x === b ? 'var(--brand-ink)' : ''; });
+          tally();
+        });
+        ch.appendChild(b);
+      });
+      var why = it.querySelector('.why');
+      it.insertBefore(ch, why || null);
+    });
+    tally();
+  });
+
+  /* ---------- worksheets: autosave + download ---------- */
+  document.querySelectorAll('[data-k]').forEach(function(el){
+    var key = MOD + ':f:' + el.getAttribute('data-k');
+    var v = store.get(key, null);
+    if (v !== null) el.value = v;
+    var t;
+    el.addEventListener('input', function(){
+      if (String(el.value).trim()) el.classList.remove('needs');
+      var sec = el.closest('section.lesson'); if (sec && DAFM.gate) DAFM.gate(sec);
+      clearTimeout(t);
+      t = setTimeout(function(){
+        store.set(key, el.value);
+        var ws = el.closest('.worksheet'); var badge = ws && ws.querySelector('.saved');
+        if (badge){ badge.classList.add('show'); setTimeout(function(){ badge.classList.remove('show'); }, 1200); }
+      }, 350);
+    });
+  });
+  document.querySelectorAll('.worksheet > h4').forEach(function(h){
+    var s = document.createElement('span'); s.className = 'saved'; s.textContent = 'Saved on this device'; h.appendChild(s);
+  });
+  document.querySelectorAll('[data-download]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lines = [document.title, 'Exported ' + new Date().toLocaleString(), ''];
+      document.querySelectorAll('.worksheet').forEach(function(ws){
+        var h = ws.querySelector('h4'); lines.push('== ' + (h ? h.firstChild.textContent.trim() : 'Worksheet') + ' ==');
+        ws.querySelectorAll('[data-k]').forEach(function(el){
+          var lab = el.getAttribute('aria-label') || (el.id && ws.querySelector('label[for="' + el.id + '"]') ? ws.querySelector('label[for="' + el.id + '"]').firstChild.textContent.trim() : el.getAttribute('data-k'));
+          lines.push(lab + ':'); lines.push((el.value || '—').trim()); lines.push('');
+        });
+      });
+      var blob = new Blob([lines.join('\n')], {type: 'text/plain'});
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+      a.download = (MOD + '-my-worksheets.txt'); document.body.appendChild(a); a.click(); a.remove();
+    });
+  });
+  document.querySelectorAll('[data-print]').forEach(function(b){ b.addEventListener('click', function(){ window.print(); }); });
+
+  /* ---------- certificate name ---------- */
+  var nameEl = document.querySelector('[data-certname]');
+  if (nameEl){ var nm = store.get('volunteer-name', ''); nameEl.textContent = nm || 'Volunteer'; }
+  document.querySelectorAll('[data-setname]').forEach(function(inp){
+    inp.value = store.get('volunteer-name', '');
+    inp.addEventListener('input', function(){ store.set('volunteer-name', inp.value); if (nameEl) nameEl.textContent = inp.value || 'Volunteer'; });
+  });
+
+  /* ---------- hub progress ---------- */
+  document.querySelectorAll('[data-hubprog]').forEach(function(el){
+    var m = el.getAttribute('data-hubprog');
+    var d = store.get(m + ':done', []), tot = store.get(m + ':total', 0);
+    var pct = tot ? Math.round(d.length / tot * 100) : 0;
+    var bar = el.querySelector('.meter i'); if (bar) bar.style.width = pct + '%';
+    var lab = el.querySelector('.plabel'); if (lab) lab.textContent = tot ? (pct === 100 ? 'Complete ✓' : pct + '% complete') : 'Not started';
+  });
+
+  var tocd = document.querySelector('.toc details'); if (tocd && window.innerWidth < 980) tocd.removeAttribute('open');
+  updateProgress();
+})();
+
+/* ---------- video slots ---------- */
+(function(){
+  var cfg = window.DAFM_VIDEOS || {};
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function embed(url){
+    url = (url || '').trim(); if (!url) return null;
+    var m;
+    if ((m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) return {t:'if', src:'https://www.youtube-nocookie.com/embed/' + m[1] + '?rel=0'};
+    if ((m = url.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/))) return {t:'if', src:'https://drive.google.com/file/d/' + m[1] + '/preview'};
+    if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/))) return {t:'if', src:'https://player.vimeo.com/video/' + m[1]};
+    if (/\.(mp4|webm|mov)(\?|$)/i.test(url)) return {t:'vid', src:url};
+    return {t:'if', src:url};
+  }
+  var total = document.querySelectorAll('.video[data-video]').length;
+  document.querySelectorAll('.video[data-video]').forEach(function(v){
+    var id = v.getAttribute('data-video'), title = v.getAttribute('data-title'), topics = v.getAttribute('data-topics'), n = v.getAttribute('data-n');
+    var c = cfg[id], poster = '', len = '';
+    if (c && typeof c === 'object'){ poster = c.poster || ''; len = c.length || ''; c = c.src; }
+    var e = embed(c);
+    var inner;
+    if (!e) inner = '<div class="ph"><div class="play" aria-hidden="true"></div><h4>' + esc(title) + '</h4><p>' + esc(topics) + '</p><span class="soon">Video coming soon · read the key takeaways below</span></div>';
+    else if (e.t === 'vid') inner = '<video controls playsinline preload="' + (poster ? 'none' : 'metadata') + '"' + (poster ? ' poster="' + esc(poster) + '"' : '') + ' src="' + esc(e.src) + '" title="' + esc(title) + '">Your browser can’t play this video. <a href="' + esc(e.src) + '">Download it</a>.</video>';
+    else inner = '<iframe src="' + esc(e.src) + '" title="' + esc(title) + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+    v.innerHTML = '<div class="frame">' + inner + '</div><div class="cap"><span>🎬 <b>Video ' + n + ' of ' + total + ':</b> ' + esc(title) + (len ? ' · ' + esc(len) : '') + '</span><span>' + esc(topics) + '</span></div>';
+  });
+})();
+window.addEventListener('beforeprint', function(){ document.querySelectorAll('details').forEach(function(d){ d.setAttribute('open', ''); }); });
+
+/* ---------- mobile menu + small-screen helpers ---------- */
+(function(){
+  var btn = document.querySelector('.menubtn'), menu = document.getElementById('mobmenu');
+  if (btn && menu){
+    var secs = menu.querySelector('.mm-secs');
+    var toc = document.querySelectorAll('.toc ol a');
+    if (toc.length && secs){
+      secs.innerHTML = '<h4>Sections in this module</h4>';
+      toc.forEach(function(a){ var c = a.cloneNode(true); c.classList.remove('active'); secs.appendChild(c); });
+    }
+    function setOpen(o){ menu.hidden = !o; btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu');
+      if (o && secs){ secs.querySelectorAll('a').forEach(function(c){ var orig = document.querySelector('.toc ol a[href="' + c.getAttribute('href') + '"]'); c.classList.toggle('done', !!(orig && orig.classList.contains('done'))); }); } }
+    btn.addEventListener('click', function(){ setOpen(menu.hidden); });
+    menu.addEventListener('click', function(e){ if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setOpen(false); });
+    window.addEventListener('resize', function(){ if (window.innerWidth > 760) setOpen(false); });
+  }
+  // stacked narrative grid: use labels as placeholders
+  document.querySelectorAll('.wgrid textarea[aria-label]').forEach(function(t){ if (!t.placeholder) t.placeholder = t.getAttribute('aria-label').replace(' — ', ': '); });
+  // flag tables that need horizontal swiping
+  function flag(){ document.querySelectorAll('.tablewrap').forEach(function(w){ w.classList.toggle('scrolls', w.scrollWidth > w.clientWidth + 2); }); }
+  flag(); window.addEventListener('resize', flag);
+  document.querySelectorAll('details').forEach(function(d){ d.addEventListener('toggle', flag); });
+})();
+
+/* ---------- light / dark switch ---------- */
+(function(){
+  var root = document.documentElement, btns = Array.prototype.slice.call(document.querySelectorAll('[data-themebtn]'));
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function current(){ var t = root.getAttribute('data-theme'); return t || (mq && mq.matches ? 'dark' : 'light'); }
+  function paint(){
+    var dark = current() === 'dark';
+    btns.forEach(function(btn){
+      btn.innerHTML = (dark ? SUN : MOON) + '<span class="tl">' + (dark ? 'Light mode' : 'Dark mode') + '</span>';
+      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.title = btn.getAttribute('aria-label');
+    });
+  }
+  btns.forEach(function(btn){ btn.addEventListener('click', function(){
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('dafm:theme', JSON.stringify(next)); } catch(e){}
+    paint();
+  }); });
+  if (mq && mq.addEventListener) mq.addEventListener('change', paint);
+  paint();
+})();
+
+/* ---------- Volunteer Hub Profile Bridge ---------- */
+(function(){
+  try {
+    fetch('/volunteer/api/training/status')
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if (data && data.authenticated) {
+          if (data.name) {
+            var nameInp = document.querySelector('[data-setname]');
+            if (nameInp && !nameInp.value) {
+              nameInp.value = data.name;
+              try { localStorage.setItem('dafm:hubname', JSON.stringify(data.name)); } catch(e){}
+              document.querySelectorAll('[data-name]').forEach(function(el){ el.textContent = data.name; });
+            }
+          }
+          var authBadge = document.createElement('div');
+          authBadge.style.cssText = 'background:#e6f3ea;border:1px solid #2e7d4f;color:#1e3a6e;font-family:var(--sans);font-size:0.85rem;font-weight:600;padding:10px 16px;border-radius:0;margin:0 0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;';
+          authBadge.innerHTML = '<span>✓ Signed in as <b>' + (data.name || 'Volunteer') + '</b> · Your module completion saves directly to your Volunteer Hub profile</span><a href="/volunteer/dashboard" class="btn small" style="background:#1e3a6e;color:#fff;text-decoration:none;border-radius:0;padding:6px 12px;font-size:0.75rem;letter-spacing:0.14em;">Hub Dashboard →</a>';
+          var main = document.getElementById('main') || document.querySelector('main');
+          if (main) main.insertBefore(authBadge, main.firstChild);
+        }
+      })
+      .catch(function(){});
+  } catch(e){}
+})();
+</script>
+</body></html>

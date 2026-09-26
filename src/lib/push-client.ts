@@ -24,6 +24,30 @@ function urlBase64ToUint8Array(base64String: string) {
 
 export async function registerHubServiceWorker() {
   if (!("serviceWorker" in navigator)) return null;
+
+  if (
+    process.env.NODE_ENV !== "production" ||
+    (typeof window !== "undefined" &&
+      (window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"))
+  ) {
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (const reg of registrations) {
+        await reg.unregister();
+      }
+      if ("caches" in window) {
+        const keys = await caches.keys();
+        for (const key of keys) {
+          await caches.delete(key);
+        }
+      }
+    } catch {
+      // ignore
+    }
+    return null;
+  }
+
   return navigator.serviceWorker.register(SW_PATH, {
     scope: SW_SCOPE,
     updateViaCache: "none",
@@ -102,7 +126,7 @@ export async function subscribeHubPush() {
 
 export async function unsubscribeHubPush() {
   if (!("serviceWorker" in navigator) || !("PushManager" in window)) return;
-  const registration = await navigator.serviceWorker.ready.catch(() => null);
+  const registration = await navigator.serviceWorker.getRegistration(SW_SCOPE).catch(() => null);
   const sub = await registration?.pushManager.getSubscription();
   if (sub) {
     await fetch("/volunteer/api/push/subscribe", {

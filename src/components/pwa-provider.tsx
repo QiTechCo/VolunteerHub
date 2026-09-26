@@ -58,7 +58,7 @@ export function PwaProvider({
     <>
       {offline ? (
         <div className="border-b border-[#d7d0c2] bg-white px-4 py-2 text-center text-sm">
-          You’re offline. How-to, roles, and Day 1 stay on this device. The shift board
+          You’re offline. Training modules and guide resources stay on this device. The shift board
           needs a connection.
         </div>
       ) : null}

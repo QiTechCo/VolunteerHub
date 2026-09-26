@@ -25,16 +25,27 @@ export function MobileNav({
       </summary>
       <div className="absolute right-0 z-50 mt-2 max-h-[min(70vh,28rem)] w-[min(18rem,calc(100vw-2rem))] overflow-y-auto border border-[#d7d0c2] bg-[#f7f3ea] p-4 shadow-sm">
         <nav className="flex flex-col gap-1">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={close}
-              className="hub-kicker min-h-11 px-1 py-2 text-[#222]"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.href === "/training" ? (
+              <a
+                key={link.href}
+                href="/volunteer/training/index.html"
+                onClick={close}
+                className="hub-kicker min-h-11 px-1 py-2 text-[#222]"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className="hub-kicker min-h-11 px-1 py-2 text-[#222]"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <a href={campaignHome} className="hub-kicker min-h-11 px-1 py-2 text-[#222]">
             Campaign home
           </a>

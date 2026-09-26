@@ -5,6 +5,8 @@ import {
   DEMO_VOLUNTEER,
   ROLE_COPY,
   ROLE_SLUGS,
+  TRAINING_COPY,
+  TRAINING_SLUGS,
 } from "../src/lib/constants";
 import {
   addCalendarDays,
@@ -42,6 +44,20 @@ async function main() {
         trustLevel: copy.trustLevel,
         requiresTraining: false,
         sortOrder: index + 1,
+      },
+    });
+  }
+
+  for (const [index, slug] of TRAINING_SLUGS.entries()) {
+    const copy = TRAINING_COPY[slug];
+    await prisma.roleCatalog.create({
+      data: {
+        slug,
+        title: copy.title,
+        description: copy.description,
+        trustLevel: slug === "organizing_intensive" ? "high" : "low",
+        requiresTraining: false,
+        sortOrder: ROLE_SLUGS.length + index + 1,
       },
     });
   }

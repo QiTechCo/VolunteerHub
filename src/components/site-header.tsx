@@ -4,10 +4,12 @@ import { getSession } from "@/lib/auth";
 import { BASE_PATH, CAMPAIGN_HOME } from "@/lib/constants";
 import { MobileNav } from "@/components/mobile-nav";
 import { LogoutButton } from "@/components/logout-button";
+import { HeaderNavLinks } from "@/components/header-nav-links";
 
 const publicLinks = [
   { href: "/", label: "How to help" },
   { href: "/shifts", label: "Shift board" },
+  { href: "/training", label: "Training" },
 ];
 
 export async function SiteHeader() {
@@ -51,22 +53,8 @@ export async function SiteHeader() {
             unoptimized
           />
         </Link>
-        <nav className="hidden min-[641px]:flex min-[641px]:flex-wrap min-[641px]:items-center min-[641px]:justify-end min-[641px]:gap-x-4 min-[641px]:gap-y-2">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hub-kicker text-[#222] hover:text-navy"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a
-            href={CAMPAIGN_HOME}
-            className="hub-kicker text-[#222] hover:text-navy"
-          >
-            Campaign home
-          </a>
+        <nav className="hidden min-[641px]:flex min-[641px]:flex-wrap min-[641px]:items-center min-[641px]:justify-end min-[641px]:gap-x-3 min-[641px]:gap-y-2">
+          <HeaderNavLinks links={links} campaignHome={CAMPAIGN_HOME} />
           {session ? (
             <LogoutButton />
           ) : (
