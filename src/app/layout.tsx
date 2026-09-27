@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f3ea",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -62,7 +62,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${ebGaramond.variable} ${leagueSpartan.variable} light h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col overflow-x-clip bg-cream text-foreground">
+      <body className="flex min-h-full flex-col overflow-x-clip bg-white text-foreground">
         <PwaProvider signedIn={Boolean(session)}>
           <SiteHeader />
           <main className="flex-1">{children}</main>

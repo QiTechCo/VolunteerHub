@@ -52,7 +52,7 @@ export default async function SchedulePage() {
           </ul>
           <div className="hidden overflow-x-auto border border-[#d7d0c2] bg-white min-[641px]:block">
           <table className="w-full text-left">
-            <thead className="border-b border-[#d7d0c2] bg-[#fcfcfc]">
+            <thead className="border-b border-[#d7d0c2] bg-white">
               <tr>
                 <th className="hub-kicker px-4 py-3">Shift</th>
                 <th className="hub-kicker px-4 py-3">When</th>

@@ -23,7 +23,7 @@ export function MobileNav({
       <summary className="hub-kicker flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center border border-[#222] px-3 py-2 [&::-webkit-details-marker]:hidden">
         Menu
       </summary>
-      <div className="absolute right-0 z-50 mt-2 max-h-[min(70vh,28rem)] w-[min(18rem,calc(100vw-2rem))] overflow-y-auto border border-[#d7d0c2] bg-[#f7f3ea] p-4 shadow-sm">
+      <div className="absolute right-0 z-50 mt-2 max-h-[min(70vh,28rem)] w-[min(18rem,calc(100vw-2rem))] overflow-y-auto border border-[#d7d0c2] bg-white p-4 shadow-sm">
         <nav className="flex flex-col gap-1">
           {links.map((link) =>
             link.href === "/training" ? (

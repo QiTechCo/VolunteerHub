@@ -115,7 +115,7 @@ export default async function DashboardPage() {
             className={`block border p-3.5 transition-colors ${
               m1Done
                 ? "border-[#1f7a44] bg-[#1f7a44] text-white hover:bg-[#196337]"
-                : "border-[#d7d0c2] bg-[#f7f3ea] hover:bg-[#efe8d8]"
+                : "border-[#d7d0c2] bg-white hover:bg-[#f9fafb]"
             }`}
           >
             <p className={`text-xs font-semibold uppercase tracking-wider ${m1Done ? "text-white/90" : "text-[#5c574c]"}`}>
@@ -133,7 +133,7 @@ export default async function DashboardPage() {
             className={`block border p-3.5 transition-colors ${
               m2Done
                 ? "border-[#1f7a44] bg-[#1f7a44] text-white hover:bg-[#196337]"
-                : "border-[#d7d0c2] bg-[#f7f3ea] hover:bg-[#efe8d8]"
+                : "border-[#d7d0c2] bg-white hover:bg-[#f9fafb]"
             }`}
           >
             <p className={`text-xs font-semibold uppercase tracking-wider ${m2Done ? "text-white/90" : "text-[#5c574c]"}`}>
@@ -151,7 +151,7 @@ export default async function DashboardPage() {
             className={`block border p-3.5 transition-colors ${
               m3Done
                 ? "border-[#1f7a44] bg-[#1f7a44] text-white hover:bg-[#196337]"
-                : "border-[#d7d0c2] bg-[#f7f3ea] hover:bg-[#efe8d8]"
+                : "border-[#d7d0c2] bg-white hover:bg-[#f9fafb]"
             }`}
           >
             <p className={`text-xs font-semibold uppercase tracking-wider ${m3Done ? "text-white/90" : "text-[#5c574c]"}`}>

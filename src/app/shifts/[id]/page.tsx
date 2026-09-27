@@ -95,7 +95,7 @@ export default async function ShiftDetailPage({
             </p>
           ) : (
             <div className="border border-[#d7d0c2] bg-white p-5">
-              <p>Log in or register to take this shift. Signup stays on Volunteer Hub.</p>
+              <p>Log in or register to take this shift.</p>
               <div className="mt-4 flex gap-3">
                 <Link href={`/login?next=/shifts/${shift.id}`} className="hub-btn inline-flex h-11 items-center border border-[#222] px-4">
                   Log in

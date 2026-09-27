@@ -40,7 +40,7 @@ export async function SiteHeader() {
         : publicLinks;
 
   return (
-    <header className="border-b border-[#d7d0c2] bg-[#f7f3ea]" style={{ paddingTop: "env(safe-area-inset-top)" }}>
+    <header className="border-b border-[#d7d0c2] bg-white" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 max-[640px]:py-2">
         <Link href="/" className="flex shrink-0 items-center">
           <Image

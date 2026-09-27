@@ -32,7 +32,7 @@ export function RoleHelpCards() {
           >
             <div className="flex flex-col gap-4 min-[480px]:flex-row min-[480px]:items-start">
               <span
-                className="flex size-24 shrink-0 items-center justify-center bg-[#f7f3ea] text-navy min-[480px]:size-32"
+                className="flex size-24 shrink-0 items-center justify-center border border-[#d7d0c2] bg-white text-navy min-[480px]:size-32"
                 aria-hidden
               >
                 <Icon className="size-12 min-[480px]:size-16" strokeWidth={1.5} />

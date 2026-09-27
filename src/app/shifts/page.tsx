@@ -114,7 +114,6 @@ export default async function ShiftsPage({
     <PageShell
       kicker="Shift board"
       title="Published shifts"
-      description="Meeting points only — no home addresses. Sign up stays on this site."
     >
       <ShiftsOfflineNote />
       <div className="mb-6 flex flex-wrap gap-2">

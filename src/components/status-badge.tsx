@@ -16,7 +16,7 @@ export function AssignmentBadge({ status }: { status: string }) {
   const label = assignmentLabel[status as AssignmentStatus] ?? status;
   const tone =
     status === "waitlisted"
-      ? "bg-[#efe8d8] text-[#222]"
+      ? "border border-[#d7d0c2] bg-white text-[#222]"
       : status === "no_show" || status === "canceled"
         ? "bg-destructive/10 text-destructive"
         : status === "completed" || status === "confirmed"
@@ -35,7 +35,7 @@ export function SegmentBadge({ segment }: { segment: Segment }) {
       ? "Hot lead"
       : segment.replace("_", " ");
   return (
-    <Badge className="rounded-none bg-[#efe8d8] font-display tracking-[0.14em] text-[#222] uppercase">
+    <Badge className="rounded-none border border-[#d7d0c2] bg-white font-display tracking-[0.14em] text-[#222] uppercase">
       {label}
     </Badge>
   );

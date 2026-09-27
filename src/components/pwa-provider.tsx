@@ -63,7 +63,7 @@ export function PwaProvider({
         </div>
       ) : null}
       {hint ? (
-        <div className="border-b border-[#d7d0c2] bg-[#efe8d8] px-4 py-3 text-sm min-[641px]:hidden">
+        <div className="border-b border-[#d7d0c2] bg-white px-4 py-3 text-sm min-[641px]:hidden">
           <p>
             Add Volunteer Hub to your Home Screen for a full-screen app and, on iPhone,
             notifications.{" "}

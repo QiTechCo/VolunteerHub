@@ -27,7 +27,7 @@ export function MobileDock({ kind }: { kind: "volunteer" | "staff" }) {
   return (
     <nav
       aria-label="Primary"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-[#d7d0c2] bg-[#f7f3ea] min-[641px]:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-[#d7d0c2] bg-white min-[641px]:hidden"
       style={{ paddingBottom: "max(0.35rem, env(safe-area-inset-bottom))" }}
     >
       <ul className="mx-auto grid max-w-6xl grid-cols-3">

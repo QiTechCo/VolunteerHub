@@ -9,7 +9,7 @@ export default async function HubHomePage() {
 
   return (
     <div>
-      <section className="border-b border-[#d7d0c2] bg-[#f7f3ea]">
+      <section className="border-b border-[#d7d0c2] bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 min-[641px]:grid-cols-[1.1fr_0.9fr] min-[641px]:items-center">
           <div>
             <p className="hub-kicker text-navy">Volunteer Hub</p>
